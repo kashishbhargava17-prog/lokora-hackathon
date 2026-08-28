@@ -1,1041 +1,781 @@
-/* =========================================================
-   LOKVAANI — INTERACTIVE LANGUAGE & FOLK KNOWLEDGE
-   Complete interactive app.js
-   ========================================================= */
+// ===============================
+// LOKVAANI — INTERACTIVE LANGUAGE
+// ===============================
 
-document.addEventListener("DOMContentLoaded", () => {
+const content = [
+  {
+    id: 1,
+    type: "word",
+    icon: "🗣️",
+    title: "Aai",
+    region: "Maharashtra",
+    language: "Marathi",
+    desc: "A warm everyday Marathi word meaning mother. Hear it spoken and learn how it is used.",
+    verified: "Community demo"
+  },
+  {
+    id: 2,
+    type: "word",
+    icon: "📚",
+    title: "Namaskar",
+    region: "Maharashtra",
+    language: "Marathi",
+    desc: "A respectful greeting used in Marathi and several other Indian languages.",
+    verified: "Heritage demo"
+  },
+  {
+    id: 3,
+    type: "proverb",
+    icon: "💬",
+    title: "A village proverb",
+    region: "Rajasthan",
+    language: "Rajasthani",
+    desc: "A traditional saying shared through generations, carrying advice and local wisdom.",
+    verified: "Community demo"
+  },
+  {
+    id: 4,
+    type: "story",
+    icon: "📖",
+    title: "The Clever Farmer",
+    region: "Rajasthan",
+    language: "Rajasthani",
+    desc: "A short folk story demonstrating how oral storytelling can pass knowledge between generations.",
+    verified: "Prototype"
+  },
+  {
+    id: 5,
+    type: "song",
+    icon: "🎵",
+    title: "Baul Folk Song",
+    region: "West Bengal",
+    language: "Bengali",
+    desc: "A folk-music tradition connected with travelling singers, philosophy and oral expression.",
+    verified: "Review needed"
+  },
+  {
+    id: 6,
+    type: "phrase",
+    icon: "🔊",
+    title: "Everyday Marathi Phrase",
+    region: "Maharashtra",
+    language: "Marathi",
+    desc: "Learn how a commonly spoken phrase sounds and when people use it in conversation.",
+    verified: "Community demo"
+  },
+  {
+    id: 7,
+    type: "word",
+    icon: "🌾",
+    title: "Lok",
+    region: "West Bengal",
+    language: "Bengali",
+    desc: "A word connected with people and community, showing how language carries cultural meaning.",
+    verified: "Heritage demo"
+  },
+  {
+    id: 8,
+    type: "story",
+    icon: "👵",
+    title: "Grandmother's Story",
+    region: "Maharashtra",
+    language: "Marathi",
+    desc: "A prototype oral-history entry showing how family stories can be preserved for younger generations.",
+    verified: "Prototype"
+  }
+];
 
-  /* -------------------------------------------------------
-     HERITAGE / LANGUAGE CONTENT
-     ------------------------------------------------------- */
 
-  const content = [
-    {
-      id: 1,
-      type: "word",
-      icon: "🗣️",
-      title: "Aai",
-      region: "Maharashtra",
-      language: "Marathi",
-      desc: "A warm everyday Marathi word meaning mother. Hear it spoken and learn how it is used.",
-      verified: "Community demo"
-    },
-    {
-      id: 2,
-      type: "word",
-      icon: "💬",
-      title: "Namaskar",
-      region: "Maharashtra",
-      language: "Marathi",
-      desc: "A respectful greeting commonly used in Marathi and many other Indian languages.",
-      verified: "Language demo"
-    },
-    {
-      id: 3,
-      type: "proverb",
-      icon: "💭",
-      title: "Marathi Proverb",
-      region: "Maharashtra",
-      language: "Marathi",
-      desc: "A traditional saying that carries advice, experience and everyday wisdom from one generation to another.",
-      verified: "Community demo"
-    },
-    {
-      id: 4,
-      type: "story",
-      icon: "📖",
-      title: "The Clever Farmer",
-      region: "Rajasthan",
-      language: "Rajasthani",
-      desc: "A short folk-story lesson showing how oral stories can preserve language, values and local knowledge.",
-      verified: "Prototype"
-    },
-    {
-      id: 5,
-      type: "song",
-      icon: "🎵",
-      title: "Baul Folk Song",
-      region: "West Bengal",
-      language: "Bengali",
-      desc: "A folk-music tradition connected with travelling singers and oral storytelling.",
-      verified: "Community demo"
-    },
-    {
-      id: 6,
-      type: "phrase",
-      icon: "🗨️",
-      title: "Everyday Marathi",
-      region: "Maharashtra",
-      language: "Marathi",
-      desc: "Useful everyday expressions that help young learners understand how regional language is actually spoken.",
-      verified: "Language demo"
-    },
-    {
-      id: 7,
-      type: "folk",
-      icon: "👵",
-      title: "Grandmother's Saying",
-      region: "Rajasthan",
-      language: "Rajasthani",
-      desc: "A sample oral-knowledge entry showing how family sayings can be recorded with their meaning and context.",
-      verified: "Community demo"
-    },
-    {
-      id: 8,
-      type: "word",
-      icon: "🌱",
-      title: "Mitti",
-      region: "Punjab",
-      language: "Punjabi",
-      desc: "A simple word meaning earth or soil, with cultural meaning connected to land and belonging.",
-      verified: "Language demo"
-    },
-    {
-      id: 9,
-      type: "story",
-      icon: "📚",
-      title: "The Village Story",
-      region: "Punjab",
-      language: "Punjabi",
-      desc: "A prototype oral story showing how local memories can be preserved for younger generations.",
-      verified: "Prototype"
-    },
-    {
-      id: 10,
-      type: "song",
-      icon: "🎶",
-      title: "Folk Singing Tradition",
-      region: "West Bengal",
-      language: "Bengali",
-      desc: "A demonstration of how songs can preserve vocabulary, stories and cultural memory.",
-      verified: "Community demo"
+// ===============================
+// QUIZ
+// ===============================
+
+const quiz = [
+  {
+    q: "Which feature best preserves the way a traditional word is spoken?",
+    options: [
+      "A consented audio recording",
+      "Only a picture",
+      "A colour theme",
+      "A leaderboard"
+    ],
+    correct: 0
+  },
+  {
+    q: "What is the best process for a community contribution?",
+    options: [
+      "Publish immediately",
+      "Submit → Review → Validate → Preserve",
+      "Delete every submission",
+      "Hide all contributions"
+    ],
+    correct: 1
+  },
+  {
+    q: "What makes a folk story useful for language learning?",
+    options: [
+      "Meaning + context + story + listening",
+      "Only the title",
+      "Only a picture",
+      "Only a score"
+    ],
+    correct: 0
+  }
+];
+
+let currentQuiz = 0;
+let score = 0;
+
+let xp = Number(
+  localStorage.getItem("lokvaaniXP") || 0
+);
+
+
+// ===============================
+// BASIC HELPERS
+// ===============================
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+
+  if (!toast) {
+    alert(message);
+    return;
+  }
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(window.toastTimer);
+
+  window.toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2600);
+}
+
+
+// ===============================
+// SPEECH / LISTENING
+// ===============================
+
+function speak(text) {
+
+  if (!("speechSynthesis" in window)) {
+    showToast("Your browser does not support voice playback.");
+    return;
+  }
+
+  speechSynthesis.cancel();
+
+  const voice = new SpeechSynthesisUtterance(text);
+
+  voice.rate = 0.8;
+  voice.pitch = 1;
+
+  speechSynthesis.speak(voice);
+
+  showToast("🔊 Playing demo pronunciation...");
+}
+
+
+// ===============================
+// EXPLORE CONTENT
+// ===============================
+
+function renderContent() {
+
+  const searchInput = document.getElementById("searchInput");
+  const typeFilter = document.getElementById("typeFilter");
+  const regionFilter = document.getElementById("regionFilter");
+  const contentGrid = document.getElementById("contentGrid");
+
+  if (!searchInput || !typeFilter || !regionFilter || !contentGrid) {
+    return;
+  }
+
+  const search = searchInput.value.toLowerCase().trim();
+  const type = typeFilter.value;
+  const region = regionFilter.value;
+
+  const items = content.filter(item => {
+
+    const matchesSearch =
+      `${item.title} ${item.language} ${item.region} ${item.desc}`
+        .toLowerCase()
+        .includes(search);
+
+    const matchesType =
+      type === "all" || item.type === type;
+
+    const matchesRegion =
+      region === "all" || item.region === region;
+
+    return matchesSearch && matchesType && matchesRegion;
+  });
+
+
+  if (!items.length) {
+
+    contentGrid.innerHTML = `
+      <div class="content-card empty-card">
+        <h3>No matches found</h3>
+        <p>Try another word, language or region.</p>
+      </div>
+    `;
+
+    return;
+  }
+
+
+  contentGrid.innerHTML = items.map(item => {
+
+    let button = "";
+
+    if (item.type === "word" || item.type === "phrase") {
+
+      button = `
+        <button
+          class="audio-btn"
+          onclick="speak('${item.title} — ${item.desc}')">
+          🔊 Listen
+        </button>
+      `;
+
+    } else if (item.type === "story") {
+
+      button = `
+        <button
+          class="audio-btn"
+          onclick="openStory(${item.id})">
+          📖 Open story
+        </button>
+      `;
+
+    } else if (item.type === "song") {
+
+      button = `
+        <button
+          class="audio-btn"
+          onclick="playSongDemo(${item.id})">
+          🎵 Listen
+        </button>
+      `;
+
+    } else if (item.type === "proverb") {
+
+      button = `
+        <button
+          class="audio-btn"
+          onclick="openProverb(${item.id})">
+          💬 Explore
+        </button>
+      `;
+
     }
-  ];
 
 
-  /* -------------------------------------------------------
-     QUIZ QUESTIONS
-     ------------------------------------------------------- */
+    return `
+      <article class="content-card">
 
-  const quiz = [
-    {
-      q: "What is the best way to preserve the pronunciation of a regional word?",
-      options: [
-        "A recording from a consented speaker",
-        "Only a written translation",
-        "A picture",
-        "A leaderboard"
-      ],
-      correct: 0
-    },
-    {
-      q: "What should happen before a community contribution is published?",
-      options: [
-        "Publish it immediately",
-        "Review and validate it",
-        "Delete it",
-        "Hide it permanently"
-      ],
-      correct: 1
-    },
-    {
-      q: "Which combination best preserves folk knowledge?",
-      options: [
-        "Meaning + audio + context + story",
-        "Only a logo",
-        "Only a photograph",
-        "Only a page counter"
-      ],
-      correct: 0
-    }
-  ];
+        <div class="card-icon">
+          ${item.icon}
+        </div>
+
+        <span class="tag">
+          ${item.type}
+        </span>
+
+        <h3>${item.title}</h3>
+
+        <p>
+          ${item.language} • ${item.region}
+        </p>
+
+        <p>
+          ${item.desc}
+        </p>
+
+        <div class="card-bottom">
+
+          <span class="verified">
+            ✓ ${item.verified}
+          </span>
+
+          ${button}
+
+        </div>
+
+      </article>
+    `;
+
+  }).join("");
+}
 
 
-  /* -------------------------------------------------------
-     STATE
-     ------------------------------------------------------- */
+// ===============================
+// VIEW ALL
+// ===============================
 
-  let currentQuiz = 0;
-  let score = 0;
+function viewAllContent() {
 
-  let xp = Number(
-    localStorage.getItem("lokvaaniXP") || 0
+  const searchInput = document.getElementById("searchInput");
+  const typeFilter = document.getElementById("typeFilter");
+  const regionFilter = document.getElementById("regionFilter");
+
+  if (searchInput) {
+    searchInput.value = "";
+  }
+
+  if (typeFilter) {
+    typeFilter.value = "all";
+  }
+
+  if (regionFilter) {
+    regionFilter.value = "all";
+  }
+
+  renderContent();
+
+  document.getElementById("explore")?.scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+
+// ===============================
+// STORIES
+// ===============================
+
+function openStory(id) {
+
+  const story = content.find(item => item.id === id);
+
+  if (!story) return;
+
+  const message =
+    `The Clever Farmer is a demo folk story lesson. ` +
+    `This story teaches how oral storytelling can preserve ` +
+    `language, values and local knowledge across generations.`;
+
+  showToast("📖 Story opened");
+
+  setTimeout(() => {
+    alert(message);
+  }, 150);
+}
+
+
+// ===============================
+// FOLK SONGS
+// ===============================
+
+function playSongDemo(id) {
+
+  const song = content.find(item => item.id === id);
+
+  if (!song) return;
+
+  speak(
+    "This is a demonstration of a folk song entry. " +
+    "Real deployments can connect a consented community recording here."
   );
+}
 
 
-  /* -------------------------------------------------------
-     ELEMENT HELPERS
-     ------------------------------------------------------- */
+// ===============================
+// PROVERBS
+// ===============================
 
-  const $ = (id) => document.getElementById(id);
+function openProverb(id) {
+
+  const proverb = content.find(item => item.id === id);
+
+  if (!proverb) return;
+
+  alert(
+    "PROVERB ACTIVITY\n\n" +
+    "Think about a situation where traditional advice " +
+    "could help solve a problem.\n\n" +
+    "This interactive activity can later be expanded " +
+    "with real community-verified proverbs."
+  );
+}
 
 
-  /* -------------------------------------------------------
-     XP
-     ------------------------------------------------------- */
+// ===============================
+// CONTRIBUTION MODAL
+// ===============================
 
-  function updateXP() {
-    const xpValue = $("xpValue");
+function openContribution() {
 
-    if (xpValue) {
-      xpValue.textContent = xp;
+  const modal =
+    document.getElementById("contributionModal");
+
+  if (!modal) return;
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+}
+
+
+function closeContribution() {
+
+  const modal =
+    document.getElementById("contributionModal");
+
+  if (!modal) return;
+
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+}
+
+
+// ===============================
+// CONTRIBUTION FORM
+// ===============================
+
+const contributionForm =
+  document.getElementById("contributionForm");
+
+if (contributionForm) {
+
+  contributionForm.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+    const old =
+      Number(
+        localStorage.getItem("lokvaaniSubmissions") || 0
+      );
+
+    localStorage.setItem(
+      "lokvaaniSubmissions",
+      old + 1
+    );
+
+    const impact =
+      document.getElementById("impactTotal");
+
+    if (impact) {
+      impact.textContent = 111 + old;
     }
+
+    contributionForm.reset();
+
+    closeContribution();
+
+    showToast(
+      "✓ Contribution submitted for review!"
+    );
+  });
+}
+
+
+// ===============================
+// QUIZ
+// ===============================
+
+function startQuiz() {
+
+  currentQuiz = 0;
+  score = 0;
+
+  const modal =
+    document.getElementById("quizModal");
+
+  if (!modal) return;
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+
+  renderQuiz();
+}
+
+
+function closeQuiz() {
+
+  const modal =
+    document.getElementById("quizModal");
+
+  if (!modal) return;
+
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+}
+
+
+function renderQuiz() {
+
+  const box =
+    document.getElementById("quizContent");
+
+  if (!box) return;
+
+  const question = quiz[currentQuiz];
+
+  box.innerHTML = `
+
+    <div class="mini-label">
+      QUESTION ${currentQuiz + 1} OF ${quiz.length}
+    </div>
+
+    <h2 style="font-size:32px">
+      ${question.q}
+    </h2>
+
+    <div class="quiz-options">
+
+      ${question.options.map((option, index) => `
+
+        <button
+          class="quiz-option"
+          onclick="answerQuiz(${index})">
+
+          ${option}
+
+        </button>
+
+      `).join("")}
+
+    </div>
+  `;
+}
+
+
+function answerQuiz(index) {
+
+  const question = quiz[currentQuiz];
+
+  document
+    .querySelectorAll(".quiz-option")
+    .forEach((button, i) => {
+
+      button.disabled = true;
+
+      if (i === question.correct) {
+        button.classList.add("correct");
+      }
+
+      if (
+        i === index &&
+        i !== question.correct
+      ) {
+        button.classList.add("wrong");
+      }
+
+    });
+
+
+  if (index === question.correct) {
+
+    score++;
+
+    xp += 20;
 
     localStorage.setItem(
       "lokvaaniXP",
       xp
     );
-  }
 
+    const xpDisplay =
+      document.getElementById("xpValue");
 
-  /* -------------------------------------------------------
-     TOAST
-     ------------------------------------------------------- */
-
-  function showToast(message) {
-
-    let toast = $("toast");
-
-    if (!toast) {
-
-      toast = document.createElement("div");
-
-      toast.id = "toast";
-      toast.className = "toast";
-
-      document.body.appendChild(toast);
+    if (xpDisplay) {
+      xpDisplay.textContent = xp;
     }
 
-    toast.textContent = message;
-    toast.classList.add("show");
-
-    clearTimeout(window.lokvaaniToast);
-
-    window.lokvaaniToast = setTimeout(() => {
-      toast.classList.remove("show");
-    }, 2600);
   }
 
 
-  /* -------------------------------------------------------
-     INTERACTION MODAL
-     Used for stories, songs, vocabulary, etc.
-     ------------------------------------------------------- */
+  setTimeout(() => {
 
-  function openInfoModal(title, label, contentText, buttonText = "Close") {
+    currentQuiz++;
 
-    let modal = $("infoModal");
+    if (currentQuiz < quiz.length) {
 
-    if (!modal) {
-
-      modal = document.createElement("div");
-
-      modal.id = "infoModal";
-      modal.className = "modal";
-
-      modal.innerHTML = `
-        <div class="modal-backdrop" data-close-info></div>
-
-        <div class="modal-card">
-
-          <button
-            class="modal-close"
-            data-close-info
-            aria-label="Close"
-          >
-            ×
-          </button>
-
-          <div class="section-label" id="infoModalLabel"></div>
-
-          <h2 id="infoModalTitle"></h2>
-
-          <p
-            id="infoModalText"
-            style="
-              color:var(--muted);
-              font-size:16px;
-              line-height:1.8;
-            "
-          ></p>
-
-          <button
-            class="btn primary"
-            id="infoModalButton"
-            data-close-info
-          ></button>
-
-        </div>
-      `;
-
-      document.body.appendChild(modal);
-
-      modal.addEventListener("click", (event) => {
-
-        if (
-          event.target.matches("[data-close-info]")
-        ) {
-          closeInfoModal();
-        }
-
-      });
-    }
-
-    $("infoModalLabel").textContent = label;
-    $("infoModalTitle").textContent = title;
-    $("infoModalText").textContent = contentText;
-    $("infoModalButton").textContent = buttonText;
-
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
-  }
-
-
-  function closeInfoModal() {
-
-    const modal = $("infoModal");
-
-    if (!modal) return;
-
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
-  }
-
-
-  /* -------------------------------------------------------
-     SPEECH
-     ------------------------------------------------------- */
-
-  function speak(text) {
-
-    if (!("speechSynthesis" in window)) {
-
-      showToast(
-        "Speech is not supported in this browser."
-      );
-
-      return;
-    }
-
-    speechSynthesis.cancel();
-
-    const utterance =
-      new SpeechSynthesisUtterance(text);
-
-    utterance.rate = 0.8;
-
-    speechSynthesis.speak(utterance);
-
-    showToast("Playing pronunciation…");
-  }
-
-
-  /* -------------------------------------------------------
-     CONTENT RENDERING
-     ------------------------------------------------------- */
-
-  function renderContent() {
-
-    const searchInput = $("searchInput");
-    const typeFilter = $("typeFilter");
-    const regionFilter = $("regionFilter");
-    const contentGrid = $("contentGrid");
-
-    if (
-      !searchInput ||
-      !typeFilter ||
-      !regionFilter ||
-      !contentGrid
-    ) {
-      return;
-    }
-
-    const search =
-      searchInput.value
-        .toLowerCase()
-        .trim();
-
-    const selectedType =
-      typeFilter.value;
-
-    const selectedRegion =
-      regionFilter.value;
-
-
-    const items = content.filter(item => {
-
-      const searchableText = `
-        ${item.title}
-        ${item.region}
-        ${item.language}
-        ${item.desc}
-        ${item.type}
-      `.toLowerCase();
-
-      const matchesSearch =
-        searchableText.includes(search);
-
-      const matchesType =
-        selectedType === "all" ||
-        selectedType === item.type;
-
-      const matchesRegion =
-        selectedRegion === "all" ||
-        selectedRegion === item.region;
-
-      return (
-        matchesSearch &&
-        matchesType &&
-        matchesRegion
-      );
-    });
-
-
-    if (!items.length) {
-
-      contentGrid.innerHTML = `
-        <div
-          class="content-card"
-          style="grid-column:1/-1"
-        >
-          <h3>No matches yet</h3>
-          <p>
-            Try another word, language, story
-            or region.
-          </p>
-        </div>
-      `;
-
-      return;
-    }
-
-
-    contentGrid.innerHTML =
-      items.map(item => {
-
-        let buttonText = "Learn →";
-
-        if (
-          item.type === "word" ||
-          item.type === "phrase"
-        ) {
-          buttonText = "🔊 Hear word";
-        }
-
-        if (item.type === "story") {
-          buttonText = "📖 Open story";
-        }
-
-        if (item.type === "song") {
-          buttonText = "🎵 Listen";
-        }
-
-        if (item.type === "proverb") {
-          buttonText = "💭 Explore";
-        }
-
-        if (item.type === "folk") {
-          buttonText = "👵 Hear saying";
-        }
-
-
-        return `
-          <article
-            class="content-card"
-            data-content-id="${item.id}"
-          >
-
-            <div class="card-icon">
-              ${item.icon}
-            </div>
-
-            <span class="tag">
-              ${item.type}
-            </span>
-
-            <h3>
-              ${item.title}
-            </h3>
-
-            <p>
-              ${item.language} • ${item.region}
-            </p>
-
-            <p>
-              ${item.desc}
-            </p>
-
-            <div class="card-bottom">
-
-              <span class="verified">
-                ✓ ${item.verified}
-              </span>
-
-              <button
-                class="audio-btn content-action"
-                data-id="${item.id}"
-                type="button"
-              >
-                ${buttonText}
-              </button>
-
-            </div>
-
-          </article>
-        `;
-
-      }).join("");
-  }
-
-
-  /* -------------------------------------------------------
-     CONTENT ACTIONS
-     ------------------------------------------------------- */
-
-  function handleContentAction(id) {
-
-    const item =
-      content.find(x => x.id === Number(id));
-
-    if (!item) return;
-
-
-    /* WORD */
-
-    if (
-      item.type === "word" ||
-      item.type === "phrase"
-    ) {
-
-      speak(
-        `${item.title}. ${item.desc}`
-      );
-
-      return;
-    }
-
-
-    /* STORY */
-
-    if (item.type === "story") {
-
-      openInfoModal(
-        item.title,
-        "FOLK STORY",
-        `${item.desc} This interactive prototype shows how a learner could read the story, hear a recording from a consented speaker and answer questions about the language and cultural context.`,
-        "Start story lesson"
-      );
-
-      return;
-    }
-
-
-    /* SONG */
-
-    if (item.type === "song") {
-
-      openInfoModal(
-        item.title,
-        "FOLK SONG",
-        `${item.desc} In the full version, this section would contain a consented audio recording, lyrics where appropriate, translation and information about the tradition.`,
-        "Listen to demo"
-      );
-
-      return;
-    }
-
-
-    /* PROVERB */
-
-    if (item.type === "proverb") {
-
-      openInfoModal(
-        item.title,
-        "PROVERB",
-        `${item.desc} Proverbs can be learned through their meaning, pronunciation and examples of situations where people traditionally use them.`,
-        "Try proverb quiz"
-      );
-
-      const button = $("infoModalButton");
-
-      if (button) {
-
-        button.removeAttribute("data-close-info");
-
-        button.onclick = () => {
-
-          closeInfoModal();
-          startQuiz();
-
-        };
-      }
-
-      return;
-    }
-
-
-    /* FOLK KNOWLEDGE */
-
-    if (item.type === "folk") {
-
-      speak(
-        `${item.title}. ${item.desc}`
-      );
-
-      showToast(
-        "Playing the demo saying…"
-      );
-
-      return;
-    }
-
-
-    /* DEFAULT */
-
-    openInfoModal(
-      item.title,
-      "LANGUAGE & FOLK KNOWLEDGE",
-      item.desc
-    );
-  }
-
-
-  /* -------------------------------------------------------
-     SEARCH + FILTERS
-     ------------------------------------------------------- */
-
-  const searchInput = $("searchInput");
-  const typeFilter = $("typeFilter");
-  const regionFilter = $("regionFilter");
-
-  if (searchInput) {
-    searchInput.addEventListener(
-      "input",
-      renderContent
-    );
-  }
-
-  if (typeFilter) {
-    typeFilter.addEventListener(
-      "change",
-      renderContent
-    );
-  }
-
-  if (regionFilter) {
-    regionFilter.addEventListener(
-      "change",
-      renderContent
-    );
-  }
-
-
-  /* -------------------------------------------------------
-     CONTENT BUTTON EVENT DELEGATION
-     ------------------------------------------------------- */
-
-  const contentGrid = $("contentGrid");
-
-  if (contentGrid) {
-
-    contentGrid.addEventListener(
-      "click",
-      (event) => {
-
-        const button =
-          event.target.closest(
-            ".content-action"
-          );
-
-        if (!button) return;
-
-        event.preventDefault();
-
-        handleContentAction(
-          button.dataset.id
-        );
-
-      }
-    );
-  }
-
-
-  /* -------------------------------------------------------
-     VIEW ALL BUTTON
-     ------------------------------------------------------- */
-
-  document
-    .querySelectorAll(".text-link")
-    .forEach(button => {
-
-      button.addEventListener(
-        "click",
-        (event) => {
-
-          event.preventDefault();
-
-          if (searchInput) {
-            searchInput.value = "";
-          }
-
-          if (typeFilter) {
-            typeFilter.value = "all";
-          }
-
-          if (regionFilter) {
-            regionFilter.value = "all";
-          }
-
-          renderContent();
-
-          const explore =
-            $("explore");
-
-          if (explore) {
-
-            explore.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-
-          }
-
-          showToast(
-            "Showing all language and folk knowledge."
-          );
-
-        }
-      );
-
-    });
-
-
-  /* -------------------------------------------------------
-     CONTRIBUTION MODAL
-     ------------------------------------------------------- */
-
-  function openContribution() {
-
-    const modal =
-      $("contributionModal");
-
-    if (!modal) return;
-
-    modal.classList.add("open");
-
-    modal.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-  }
-
-
-  function closeContribution() {
-
-    const modal =
-      $("contributionModal");
-
-    if (!modal) return;
-
-    modal.classList.remove("open");
-
-    modal.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-  }
-
-
-  document
-    .querySelectorAll(
-      '[onclick*="openContribution"]'
-    )
-    .forEach(button => {
-
-      button.removeAttribute("onclick");
-
-      button.addEventListener(
-        "click",
-        openContribution
-      );
-
-    });
-
-
-  document
-    .querySelectorAll(
-      '[onclick*="closeContribution"]'
-    )
-    .forEach(button => {
-
-      button.removeAttribute("onclick");
-
-      button.addEventListener(
-        "click",
-        closeContribution
-      );
-
-    });
-
-
-  const contributionForm =
-    $("contributionForm");
-
-  if (contributionForm) {
-
-    contributionForm.addEventListener(
-      "submit",
-      (event) => {
-
-        event.preventDefault();
-
-        const old =
-          Number(
-            localStorage.getItem(
-              "lokvaaniSubmissions"
-            ) || 0
-          );
-
-        localStorage.setItem(
-          "lokvaaniSubmissions",
-          old + 1
-        );
-
-
-        const impactTotal =
-          $("impactTotal");
-
-        if (impactTotal) {
-
-          impactTotal.textContent =
-            110 + old + 1;
-
-        }
-
-
-        contributionForm.reset();
-
-        closeContribution();
-
-        showToast(
-          "Thank you! Your contribution has been added to the review queue."
-        );
-
-      }
-    );
-  }
-
-
-  /* -------------------------------------------------------
-     QUIZ
-     ------------------------------------------------------- */
-
-  function startQuiz() {
-
-    currentQuiz = 0;
-    score = 0;
-
-    const modal =
-      $("quizModal");
-
-    if (!modal) return;
-
-    modal.classList.add("open");
-
-    modal.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-    renderQuiz();
-  }
-
-
-  function closeQuiz() {
-
-    const modal =
-      $("quizModal");
-
-    if (!modal) return;
-
-    modal.classList.remove("open");
-
-    modal.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-  }
-
-
-  function renderQuiz() {
-
-    const quizContent =
-      $("quizContent");
-
-    if (!quizContent) return;
-
-    const question =
-      quiz[currentQuiz];
-
-
-    quizContent.innerHTML = `
-      <div class="mini-label">
-        QUESTION ${currentQuiz + 1}
-        OF ${quiz.length}
-      </div>
-
-      <h2 style="font-size:32px">
-        ${question.q}
-      </h2>
-
-      <div>
-
-        ${question.options.map(
-          (option, index) => `
-
-            <button
-              class="quiz-option"
-              data-answer="${index}"
-              type="button"
-            >
-              ${option}
-            </button>
-
-          `
-        ).join("")}
-
-      </div>
-    `;
-
-
-    quizContent
-      .querySelectorAll(".quiz-option")
-      .forEach(button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            answerQuiz(
-              Number(
-                button.dataset.answer
-              )
-            );
-
-          }
-        );
-
-      });
-  }
-
-
-  function answerQuiz(answer) {
-
-    const question =
-      quiz[currentQuiz];
-
-    const buttons =
-      document.querySelectorAll(
-        ".quiz-option"
-      );
-
-
-    buttons.forEach(
-      (button, index) => {
-
-        button.disabled = true;
-
-        if (
-          index === question.correct
-        ) {
-
-          button.classList.add(
-            "correct"
-          );
-
-        }
-
-        if (
-          index === answer &&
-          index !== question.correct
-        ) {
-
-          button.classList.add(
-            "wrong"
-          );
-
-        }
-
-      }
-    );
-
-
-    if (
-      answer === question.correct
-    ) {
-
-      score++;
-
-      xp += 20;
-
-      updateXP();
-
-      showToast(
-        "+20 XP! Correct answer."
-      );
+      renderQuiz();
 
     } else {
 
-      showToast(
-        "Not quite — keep learning!"
-      );
+      updateProgress();
 
+      const box =
+        document.getElementById("quizContent");
+
+      if (!box) return;
+
+      box.innerHTML = `
+
+        <div class="quiz-result">
+
+          <div style="font-size:55px">
+            🏆
+          </div>
+
+          <div class="section-label">
+            QUIZ COMPLETE
+          </div>
+
+          <h2 style="font-size:40px">
+            You scored ${score}/${quiz.length}
+          </h2>
+
+          <p>
+            You earned ${score * 20} XP.
+          </p>
+
+          <button
+            class="btn primary"
+            onclick="closeQuiz()">
+
+            Continue exploring
+
+          </button>
+
+        </div>
+      `;
     }
 
+  }, 850);
+}
 
-    setTimeout(() => {
 
-      currentQuiz++;
+// ===============================
+// PROGRESS
+// ===============================
 
-      if (
-        currentQuiz < quiz.length
-      ) {
+function updateProgress() {
 
-        renderQuiz();
+  const percentage =
+    Math.min(100, Math.round(xp / 2));
 
-      } else {
+  const bar =
+    document.getElementById("progressBar");
 
-        showQuizResult();
+  const text =
+    document.getElementById("progressText");
 
-      }
-
-    }, 900);
+  if (bar) {
+    bar.style.width =
+      percentage + "%";
   }
 
-
-  function showQuizResult() {
-
-    const quizContent =
-      $("quizContent");
-
-    if (!quizContent) return;
+  if (text) {
+    text.textContent =
+      percentage + "% complete";
+  }
+}
 
 
-    updateProgress();
+// ===============================
+// VOCABULARY BUTTON
+// ===============================
+
+function openVocabulary() {
+
+  alert(
+    "VOCABULARY LESSON\n\n" +
+    "1. Aai — Mother\n" +
+    "2. Namaskar — Greeting\n" +
+    "3. Lok — People / community\n\n" +
+    "Tap the Listen buttons in Explore to hear demo pronunciation."
+  );
+}
 
 
-    quizContent.innerHTML = `
+// ===============================
+// EVENT LISTENERS
+// ===============================
 
-      <div class="quiz-result">
+const searchInput =
+  document.getElementById("searchInput");
 
-        <div style="font-size:55px">
-          🏆
-        </div>
+const typeFilter =
+  document.getElementById("typeFilter");
 
-        <div class="section-label">
-          QUIZ COMPLETE
-        </div>
+const regionFilter =
+  document.getElementById("regionFilter");
 
-        <h2 style="font-size:40px">
-          You scored
-        
+
+if (searchInput) {
+
+  searchInput.addEventListener(
+    "input",
+    renderContent
+  );
+
+}
+
+
+if (typeFilter) {
+
+  typeFilter.addEventListener(
+    "change",
+    renderContent
+  );
+
+}
+
+
+if (regionFilter) {
+
+  regionFilter.addEventListener(
+    "change",
+    renderContent
+  );
+
+}
+
+
+// ===============================
+// MOBILE MENU
+// ===============================
+
+const menuToggle =
+  document.getElementById("menuToggle");
+
+const mainNav =
+  document.getElementById("mainNav");
+
+
+if (menuToggle && mainNav) {
+
+  menuToggle.addEventListener(
+    "click",
+    () => {
+
+      mainNav.classList.toggle("open");
+
+    }
+  );
+
+
+  document
+    .querySelectorAll("#mainNav a")
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+          mainNav.classList.remove("open");
+        }
+      );
+
+    });
+
+}
+
+
+// ===============================
+// INITIALIZE
+// ===============================
+
+const xpDisplay =
+  document.getElementById("xpValue");
+
+if (xpDisplay) {
+  xpDisplay.textContent = xp;
+}
+
+renderContent();
+updateProgress();
