@@ -306,3 +306,94 @@ footer p{font-size:12px}
   footer{flex-direction:column;align-items:flex-start;gap:15px}
   .two-col{grid-template-columns:1fr}
 }
+/* MOBILE LAYOUT FIX */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    min-height: 78px;
+  }
+
+  .hero,
+  .section,
+  .bridge,
+  .contribute-section {
+    width: 100%;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .content-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .content-card {
+    width: 100%;
+    min-height: 240px;
+  }
+
+  .voice-banner {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .voice-art {
+    min-height: 220px;
+  }
+
+  .voice-copy {
+    padding: 32px 25px;
+  }
+
+  .voice-copy h2 {
+    font-size: 34px;
+  }
+
+  .voice-cards {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .learning-layout {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-card.featured {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .impact-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .impact-card.big {
+    grid-column: auto;
+  }
+
+  .contribute-section {
+    grid-template-columns: 1fr;
+  }
+
+  .contribute-flow {
+    width: 100%;
+  }
+
+  footer {
+    width: 100%;
+  }
+}
