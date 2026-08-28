@@ -124,73 +124,1028 @@
         <article class="lesson-card">
           <div class="lesson-icon">💬</div><span class="mini-label">PROVERBS</span><h3>Can you use it?</h3><p>Match a proverb to the situation where it belongs.</p><button class="text-btn" onclick="startQuiz()">Play →</button>
         </article>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="LokVaani — an interactive platform for discovering India's regional languages, folk stories, proverbs, songs and oral knowledge."
+  />
+
+  <title>LokVaani — Hear. Learn. Pass It On.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    🎙️ Interactive Language & Folk Knowledge • Learn from voices, stories and traditions
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+
+    <a class="brand" href="#home" aria-label="LokVaani home">
+      <span class="brand-mark">ल</span>
+
+      <span>
+        <strong>LokVaani</strong>
+        <small>Hear. Learn. Pass it on.</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open menu"
+    >
+      ☰
+    </button>
+
+    <nav id="mainNav">
+      <a href="#explore">Explore</a>
+      <a href="#voices">Voices</a>
+      <a href="#learn">Learn & Play</a>
+      <a href="#contribute">Contribute</a>
+      <a href="#impact">Impact</a>
+
+      <button
+        class="nav-cta"
+        onclick="openContribution()"
+      >
+        Share Knowledge
+      </button>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          INTERACTIVE LANGUAGE & FOLK KNOWLEDGE
+        </div>
+
+        <h1>
+          Hear the language.<br>
+          <em>Discover the stories.</em><br>
+          Keep knowledge alive.
+        </h1>
+
+        <p class="hero-text">
+          LokVaani connects generations through regional languages,
+          folk stories, proverbs, songs and the voices of people
+          who carry this knowledge.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            class="btn primary"
+            href="#explore"
+          >
+            Explore Languages <span>→</span>
+          </a>
+
+          <button
+            class="btn ghost"
+            onclick="openContribution()"
+          >
+            + Share folk knowledge
+          </button>
+
+        </div>
+
+        <div class="hero-stats">
+
+          <div>
+            <strong id="heroStories">24</strong>
+            <span>stories</span>
+          </div>
+
+          <div>
+            <strong id="heroWords">86</strong>
+            <span>words</span>
+          </div>
+
+          <div>
+            <strong>8</strong>
+            <span>languages</span>
+          </div>
+
+          <div>
+            <strong>38</strong>
+            <span>contributors</span>
+          </div>
+
+        </div>
+
       </div>
+
+      <!-- HERO VISUAL -->
+      <div class="hero-art" aria-hidden="true">
+
+        <div class="sun"></div>
+
+        <div class="arch">
+
+          <div class="arch-inner">
+
+            <div class="lamp">✦</div>
+
+            <div class="sound-wave">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+
+            <strong>VOICE</strong>
+            <strong>OF INDIA</strong>
+
+            <span>
+              WORDS • STORIES • SONGS
+            </span>
+
+          </div>
+
+        </div>
+
+        <div class="pattern p1">✦</div>
+        <div class="pattern p2">◌</div>
+        <div class="pattern p3">✺</div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="bridge">
+
+      <div class="section-label">
+        HOW LOKVAANI WORKS
+      </div>
+
+      <h2>
+        From <span>voices</span><br>
+        to the next generation.
+      </h2>
+
+      <div class="bridge-grid">
+
+        <article>
+
+          <div class="icon-circle">
+            👵
+          </div>
+
+          <h3>
+            Knowledge holders
+          </h3>
+
+          <p>
+            Elders, artists and local speakers share
+            words, pronunciation, stories and folk knowledge.
+          </p>
+
+        </article>
+
+        <div class="flow-arrow">
+          →
+        </div>
+
+        <article>
+
+          <div class="icon-circle">
+            🔊
+          </div>
+
+          <h3>
+            Listen & learn
+          </h3>
+
+          <p>
+            Young learners hear real pronunciation,
+            discover meanings and explore cultural context.
+          </p>
+
+        </article>
+
+        <div class="flow-arrow">
+          →
+        </div>
+
+        <article>
+
+          <div class="icon-circle">
+            🧑‍🎓
+          </div>
+
+          <h3>
+            Play & pass it on
+          </h3>
+
+          <p>
+            Quizzes, stories and interactive activities
+            make regional knowledge fun to learn and remember.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPLORE -->
+    <section id="explore" class="section">
+
+      <div class="section-heading">
+
+        <div>
+
+          <div class="section-label">
+            DISCOVER
+          </div>
+
+          <h2>
+            Explore languages & folk knowledge
+          </h2>
+
+        </div>
+
+        <a
+          href="#explore"
+          class="text-link"
+        >
+          View all →
+        </a>
+
+      </div>
+
+
+      <div class="filters">
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search a word, story, proverb or language..."
+        />
+
+        <select id="typeFilter">
+
+          <option value="all">
+            All content
+          </option>
+
+          <option value="word">
+            Words & Vocabulary
+          </option>
+
+          <option value="story">
+            Folk Stories
+          </option>
+
+          <option value="proverb">
+            Proverbs & Idioms
+          </option>
+
+          <option value="song">
+            Folk Songs
+          </option>
+
+        </select>
+
+
+        <select id="regionFilter">
+
+          <option value="all">
+            All regions
+          </option>
+
+          <option value="Maharashtra">
+            Maharashtra
+          </option>
+
+          <option value="Punjab">
+            Punjab
+          </option>
+
+          <option value="West Bengal">
+            West Bengal
+          </option>
+
+          <option value="Rajasthan">
+            Rajasthan
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div
+        id="contentGrid"
+        class="content-grid"
+      ></div>
+
+    </section>
+
+
+    <!-- VOICES -->
+    <section
+      id="voices"
+      class="section voices-section"
+    >
+
+      <div class="voice-banner">
+
+        <div class="voice-art">
+
+          <div class="quote-mark">
+            “
+          </div>
+
+          <div class="portrait">
+            👵
+          </div>
+
+          <div class="voice-art-label">
+            A VOICE CAN CARRY
+            GENERATIONS OF KNOWLEDGE
+          </div>
+
+        </div>
+
+
+        <div class="voice-copy">
+
+          <div class="section-label">
+            VOICES OF KNOWLEDGE
+          </div>
+
+          <h2>
+            Learn the way knowledge was meant to be heard.
+          </h2>
+
+          <p>
+            A word isn't just a translation. A proverb isn't just a sentence.
+            Behind every expression is a voice, a story and a cultural context.
+          </p>
+
+          <button
+            class="btn light"
+            onclick="speak('Aai means mother in Marathi. Listen, repeat and learn.')"
+          >
+            ▶ Hear a demo pronunciation
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="voice-cards">
+
+        <article>
+
+          <span class="voice-tag">
+            LANGUAGE • MARATHI
+          </span>
+
+          <h3>
+            “Aai”
+          </h3>
+
+          <p>
+            A Marathi word meaning <strong>mother</strong>.
+          </p>
+
+          <button
+            onclick="speak('Aai. Aai means mother in Marathi.')"
+          >
+            🔊 Hear pronunciation
+          </button>
+
+        </article>
+
+
+        <article>
+
+          <span class="voice-tag">
+            FOLK KNOWLEDGE • RAJASTHAN
+          </span>
+
+          <h3>
+            A village proverb
+          </h3>
+
+          <p>
+            Discover how traditional sayings carry
+            advice from one generation to another.
+          </p>
+
+          <button
+            onclick="showToast('Demo proverb opened!')"
+          >
+            💬 Explore proverb
+          </button>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- LEARN & PLAY -->
+    <section
+      id="learn"
+      class="section learn-section"
+    >
+
+      <div class="section-heading">
+
+        <div>
+
+          <div class="section-label">
+            LEARN & PLAY
+          </div>
+
+          <h2>
+            Learn a language through interaction
+          </h2>
+
+        </div>
+
+        <div class="xp-pill">
+          ⚡ <span id="xpValue">0</span> XP
+        </div>
+
+      </div>
+
+
+      <div class="learning-layout">
+
+
+        <article class="lesson-card featured">
+
+          <div class="lesson-visual">
+            🔊
+          </div>
+
+          <div class="lesson-body">
+
+            <span class="mini-label">
+              FEATURED ACTIVITY
+            </span>
+
+            <h3>
+              Can you understand this word?
+            </h3>
+
+            <p>
+              Listen to a regional word, discover its meaning
+              and test yourself with a quick challenge.
+            </p>
+
+            <button
+              class="btn primary small"
+              onclick="startQuiz()"
+            >
+              Start challenge →
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <article class="lesson-card">
+
+          <div class="lesson-icon">
+            🗣️
+          </div>
+
+          <span class="mini-label">
+            VOCABULARY
+          </span>
+
+          <h3>
+            Words around us
+          </h3>
+
+          <p>
+            Discover everyday words from different
+            Indian languages.
+          </p>
+
+          <button
+            class="text-btn"
+            onclick="showToast('Vocabulary activity opened!')"
+          >
+            Learn words →
+          </button>
+
+        </article>
+
+
+        <article class="lesson-card">
+
+          <div class="lesson-icon">
+            💬
+          </div>
+
+          <span class="mini-label">
+            FOLK KNOWLEDGE
+          </span>
+
+          <h3>
+            Match the proverb
+          </h3>
+
+          <p>
+            Can you connect an old saying with
+            the situation where it belongs?
+          </p>
+
+          <button
+            class="text-btn"
+            onclick="startQuiz()"
+          >
+            Play →
+          </button>
+
+        </article>
+
+      </div>
+
+
       <div class="progress-card">
-        <div><div><span>My heritage journey</span><strong id="progressText">0% complete</strong></div><div class="progress-track"><div id="progressBar"></div></div></div>
-        <div class="badges"><span>🌱 Explorer</span><span>🔒 Culture Keeper</span><span>🔒 Heritage Champion</span></div>
+
+        <div>
+
+          <div>
+            <span>
+              My learning journey
+            </span>
+
+            <strong id="progressText">
+              0% complete
+            </strong>
+          </div>
+
+          <div class="progress-track">
+            <div id="progressBar"></div>
+          </div>
+
+        </div>
+
+
+        <div class="badges">
+
+          <span>
+            🌱 Explorer
+          </span>
+
+          <span>
+            🔒 Language Learner
+          </span>
+
+          <span>
+            🔒 Culture Keeper
+          </span>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section id="contribute" class="section contribute-section">
+
+    <!-- CONTRIBUTE -->
+    <section
+      id="contribute"
+      class="section contribute-section"
+    >
+
       <div class="contribute-copy">
-        <div class="section-label">COMMUNITY CONTRIBUTIONS</div>
-        <h2>Know something worth preserving?</h2>
-        <p>Share a word, proverb, folk story, song, oral history or pronunciation. Your submission can enter a review queue before it becomes part of the public collection.</p>
-        <button class="btn primary" onclick="openContribution()">+ Share your heritage</button>
+
+        <div class="section-label">
+          COMMUNITY CONTRIBUTIONS
+        </div>
+
+        <h2>
+          Know a word, story or tradition worth passing on?
+        </h2>
+
+        <p>
+          Share regional vocabulary, a proverb, folk story,
+          song, pronunciation or oral knowledge.
+          Contributions can be reviewed before publication.
+        </p>
+
+        <button
+          class="btn primary"
+          onclick="openContribution()"
+        >
+          + Share your knowledge
+        </button>
+
       </div>
+
+
       <div class="contribute-flow">
-        <div><b>01</b><span>Submit</span></div><i>→</i><div><b>02</b><span>Review</span></div><i>→</i><div><b>03</b><span>Validate</span></div><i>→</i><div><b>04</b><span>Preserve</span></div>
+
+        <div>
+          <b>01</b>
+          <span>Share</span>
+        </div>
+
+        <i>→</i>
+
+        <div>
+          <b>02</b>
+          <span>Review</span>
+        </div>
+
+        <i>→</i>
+
+        <div>
+          <b>03</b>
+          <span>Validate</span>
+        </div>
+
+        <i>→</i>
+
+        <div>
+          <b>04</b>
+          <span>Pass it on</span>
+        </div>
+
       </div>
+
     </section>
 
-    <section id="impact" class="section impact-section">
-      <div class="section-heading"><div><div class="section-label">IMPACT DASHBOARD</div><h2>Measure what we preserve</h2></div></div>
-      <div class="impact-grid">
-        <div class="impact-card big"><span>Knowledge preserved</span><strong id="impactTotal">110</strong><small>demo records</small></div>
-        <div class="impact-card"><span>Languages & dialects</span><strong>8</strong><small>represented</small></div>
-        <div class="impact-card"><span>Knowledge holders</span><strong>38</strong><small>contributors</small></div>
-        <div class="impact-card map-card"><span>Heritage map</span><div class="india-map">INDIA<br><small>12 regions</small></div></div>
+
+    <!-- IMPACT -->
+    <section
+      id="impact"
+      class="section impact-section"
+    >
+
+      <div class="section-heading">
+
+        <div>
+
+          <div class="section-label">
+            IMPACT
+          </div>
+
+          <h2>
+            Knowledge that keeps speaking
+          </h2>
+
+        </div>
+
       </div>
+
+
+      <div class="impact-grid">
+
+        <div class="impact-card big">
+
+          <span>
+            Knowledge shared
+          </span>
+
+          <strong id="impactTotal">
+            110
+          </strong>
+
+          <small>
+            demo records
+          </small>
+
+        </div>
+
+
+        <div class="impact-card">
+
+          <span>
+            Languages & dialects
+          </span>
+
+          <strong>
+            8
+          </strong>
+
+          <small>
+            represented
+          </small>
+
+        </div>
+
+
+        <div class="impact-card">
+
+          <span>
+            Knowledge holders
+          </span>
+
+          <strong>
+            38
+          </strong>
+
+          <small>
+            contributors
+          </small>
+
+        </div>
+
+
+        <div class="impact-card map-card">
+
+          <span>
+            Explore by region
+          </span>
+
+          <div class="india-map">
+
+            🇮🇳
+
+            <small>
+              Voices from across India
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
+
   </main>
 
+
+  <!-- FOOTER -->
   <footer>
-    <div class="brand footer-brand"><span class="brand-mark">ल</span><span><strong>LokVaani</strong><small>Preserve. Learn. Pass it on.</small></span></div>
-    <p>Hackathon prototype • Built for Heritage & Culture</p>
+
+    <div class="brand footer-brand">
+
+      <span class="brand-mark">
+        ल
+      </span>
+
+      <span>
+        <strong>
+          LokVaani
+        </strong>
+
+        <small>
+          Hear. Learn. Pass it on.
+        </small>
+      </span>
+
+    </div>
+
+    <p>
+      Hackathon prototype • Interactive Language & Folk Knowledge
+    </p>
+
   </footer>
 
-  <div id="contributionModal" class="modal" aria-hidden="true">
-    <div class="modal-backdrop" onclick="closeContribution()"></div>
+
+  <!-- CONTRIBUTION MODAL -->
+  <div
+    id="contributionModal"
+    class="modal"
+    aria-hidden="true"
+  >
+
+    <div
+      class="modal-backdrop"
+      onclick="closeContribution()"
+    ></div>
+
     <div class="modal-card">
-      <button class="modal-close" onclick="closeContribution()" aria-label="Close">×</button>
-      <div class="section-label">SHARE YOUR HERITAGE</div>
-      <h2>Help preserve a piece of your culture.</h2>
+
+      <button
+        class="modal-close"
+        onclick="closeContribution()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="section-label">
+        SHARE KNOWLEDGE
+      </div>
+
+      <h2>
+        Pass a piece of language or folk knowledge on.
+      </h2>
+
       <form id="contributionForm">
-        <label>Your name / contributor name<input name="name" required placeholder="e.g. Asha's family archive"></label>
+
+        <label>
+          Contributor name
+
+          <input
+            name="name"
+            required
+            placeholder="e.g. Asha's family archive"
+          />
+
+        </label>
+
+
         <div class="two-col">
-          <label>Content type<select name="type"><option>Word / vocabulary</option><option>Folk story</option><option>Proverb / idiom</option><option>Traditional song</option><option>Oral history</option></select></label>
-          <label>Region<input name="region" required placeholder="e.g. Maharashtra"></label>
+
+          <label>
+            Content type
+
+            <select name="type">
+
+              <option>
+                Word / vocabulary
+              </option>
+
+              <option>
+                Folk story
+              </option>
+
+              <option>
+                Proverb / idiom
+              </option>
+
+              <option>
+                Traditional song
+              </option>
+
+              <option>
+                Oral history
+              </option>
+
+            </select>
+
+          </label>
+
+
+          <label>
+            Region
+
+            <input
+              name="region"
+              required
+              placeholder="e.g. Maharashtra"
+            />
+
+          </label>
+
         </div>
-        <label>Language / dialect<input name="language" required placeholder="e.g. Marathi"></label>
-        <label>Title or word<input name="title" required placeholder="What are you sharing?"></label>
-        <label>Tell us about it<textarea name="description" rows="4" required placeholder="Meaning, story, cultural context, when it is used..."></textarea></label>
-        <label>Pronunciation / audio URL (optional)<input name="audio" placeholder="Optional link for your prototype"></label>
-        <div class="consent"><input id="consent" type="checkbox" required><label for="consent">I understand this is a demo submission and real deployments should collect appropriate consent and validation.</label></div>
-        <button class="btn primary full" type="submit">Submit for review →</button>
+
+
+        <label>
+          Language / dialect
+
+          <input
+            name="language"
+            required
+            placeholder="e.g. Marathi"
+          />
+
+        </label>
+
+
+        <label>
+          Word, story or title
+
+          <input
+            name="title"
+            required
+            placeholder="What are you sharing?"
+          />
+
+        </label>
+
+
+        <label>
+          Tell us about it
+
+          <textarea
+            name="description"
+            rows="4"
+            required
+            placeholder="Meaning, story, cultural context, when it is used..."
+          ></textarea>
+
+        </label>
+
+
+        <label>
+          Pronunciation / audio URL (optional)
+
+          <input
+            name="audio"
+            placeholder="Optional link"
+          />
+
+        </label>
+
+
+        <div class="consent">
+
+          <input
+            id="consent"
+            type="checkbox"
+            required
+          />
+
+          <label for="consent">
+            I understand this is a demo submission and
+            real deployments should collect appropriate
+            consent and validation.
+          </label>
+
+        </div>
+
+
+        <button
+          class="btn primary full"
+          type="submit"
+        >
+          Submit for review →
+        </button>
+
       </form>
+
     </div>
+
   </div>
 
-  <div id="quizModal" class="modal" aria-hidden="true">
-    <div class="modal-backdrop" onclick="closeQuiz()"></div>
+
+  <!-- QUIZ MODAL -->
+  <div
+    id="quizModal"
+    class="modal"
+    aria-hidden="true"
+  >
+
+    <div
+      class="modal-backdrop"
+      onclick="closeQuiz()"
+    ></div>
+
     <div class="modal-card quiz-card">
-      <button class="modal-close" onclick="closeQuiz()" aria-label="Close">×</button>
-      <div class="section-label">HERITAGE QUIZ</div>
+
+      <button
+        class="modal-close"
+        onclick="closeQuiz()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="section-label">
+        LANGUAGE & FOLK KNOWLEDGE CHALLENGE
+      </div>
+
       <div id="quizContent"></div>
+
     </div>
+
   </div>
 
-  <div id="toast" class="toast"></div>
+
+  <!-- TOAST -->
+  <div
+    id="toast"
+    class="toast"
+  ></div>
+
+
   <script src="app.js"></script>
+
 </body>
 </html>
