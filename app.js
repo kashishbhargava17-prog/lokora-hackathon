@@ -1,13 +1,4 @@
-/* =========================================
-   LOKVAANI
-   INTERACTIVE LANGUAGE & FOLK KNOWLEDGE
-========================================= */
-
-
-/* CONTENT */
-
 const content = [
-
   {
     id: 1,
     type: "word",
@@ -15,21 +6,19 @@ const content = [
     title: "Aai",
     region: "Maharashtra",
     language: "Marathi",
-    desc: "A warm everyday Marathi word meaning mother. Hear it spoken and learn how it is used.",
+    desc: "A commonly used Marathi word for mother, often carrying a strong sense of affection and respect.",
     verified: "Language demo"
   },
-
   {
     id: 2,
     type: "word",
-    icon: "🌱",
-    title: "Namaskar",
-    region: "Maharashtra",
-    language: "Marathi",
-    desc: "A respectful greeting commonly used in Marathi-speaking communities.",
+    icon: "💬",
+    title: "Pind",
+    region: "Punjab",
+    language: "Punjabi",
+    desc: "A Punjabi word often used for a village or one's native village, connecting language with a sense of home.",
     verified: "Language demo"
   },
-
   {
     id: 3,
     type: "story",
@@ -37,137 +26,140 @@ const content = [
     title: "The Clever Farmer",
     region: "Rajasthan",
     language: "Rajasthani",
-    desc: "A short folk-story lesson showing how traditional stories carry wisdom across generations.",
+    desc: "A short folk-story lesson showing how traditional stories pass wisdom from one generation to another.",
     verified: "Story demo"
   },
-
   {
     id: 4,
     type: "proverb",
-    icon: "💬",
-    title: "A village proverb",
-    region: "Rajasthan",
-    language: "Rajasthani",
-    desc: "Explore how traditional sayings communicate practical wisdom and life lessons.",
+    icon: "💡",
+    title: "A Village Proverb",
+    region: "Maharashtra",
+    language: "Marathi",
+    desc: "A traditional saying used to express everyday wisdom and teach younger generations through simple words.",
     verified: "Community demo"
   },
-
   {
     id: 5,
     type: "song",
     icon: "🎵",
-    title: "Baul Music",
+    title: "Baul Folk Song",
     region: "West Bengal",
     language: "Bengali",
-    desc: "A Bengali folk tradition connected with travelling singers, philosophy and oral expression.",
-    verified: "Folk knowledge demo"
-  },
-
-  {
-    id: 6,
-    type: "word",
-    icon: "👋",
-    title: "Sat Sri Akal",
-    region: "Punjab",
-    language: "Punjabi",
-    desc: "A well-known Punjabi greeting associated with respect, community and everyday conversation.",
-    verified: "Language demo"
-  },
-
-  {
-    id: 7,
-    type: "proverb",
-    icon: "🧠",
-    title: "Wisdom in a saying",
-    region: "Punjab",
-    language: "Punjabi",
-    desc: "Discover how proverbs preserve advice, humour and community knowledge.",
+    desc: "A folk-song tradition where music and oral expression are used to share ideas, stories and philosophy.",
     verified: "Community demo"
   },
-
+  {
+    id: 6,
+    type: "oral",
+    icon: "👵",
+    title: "Grandmother's Words",
+    region: "Maharashtra",
+    language: "Marathi",
+    desc: "An example of how elders pass everyday expressions, memories and language knowledge to younger family members.",
+    verified: "Oral history demo"
+  },
+  {
+    id: 7,
+    type: "knowledge",
+    icon: "🌾",
+    title: "Traditional Farming Wisdom",
+    region: "Punjab",
+    language: "Punjabi",
+    desc: "Traditional knowledge about seasonal farming practices and observations passed down through generations.",
+    verified: "Knowledge demo"
+  },
   {
     id: 8,
     type: "story",
-    icon: "🌾",
+    icon: "📚",
     title: "The Village Storyteller",
     region: "West Bengal",
     language: "Bengali",
-    desc: "A prototype oral-history activity showing how stories can be preserved with context and voice.",
-    verified: "Prototype"
+    desc: "A folk-story concept showing how oral storytelling preserves local expressions, values and community memories.",
+    verified: "Story demo"
+  },
+  {
+    id: 9,
+    type: "proverb",
+    icon: "🧠",
+    title: "Wisdom in a Saying",
+    region: "Rajasthan",
+    language: "Rajasthani",
+    desc: "A traditional proverb demonstrating how short sayings can communicate practical knowledge and life lessons.",
+    verified: "Community demo"
+  },
+  {
+    id: 10,
+    type: "word",
+    icon: "🔤",
+    title: "Regional Expressions",
+    region: "West Bengal",
+    language: "Bengali",
+    desc: "Everyday regional expressions that reveal how language changes across communities and generations.",
+    verified: "Language demo"
   }
-
 ];
 
 
-/* QUIZ */
-
 const quiz = [
-
   {
-    q: "What is the best way to preserve the pronunciation of a regional word?",
-
+    q: "Which feature best preserves the way a traditional word is actually spoken?",
     options: [
       "A recording from a consented speaker",
       "Only a written translation",
-      "A picture of the word",
+      "A decorative image",
       "A leaderboard"
     ],
-
     correct: 0
   },
-
   {
-    q: "Which combination makes language learning more interactive?",
-
+    q: "What is the strongest workflow for a community contribution?",
     options: [
-      "Meaning + pronunciation + context + quiz",
-      "Only a dictionary",
-      "Only a poster",
-      "Only a page counter"
+      "Publish immediately",
+      "Submit → review → validate → publish",
+      "Delete every submission",
+      "Hide all contributions"
     ],
-
-    correct: 0
+    correct: 1
   },
-
   {
-    q: "What can folk proverbs preserve?",
-
+    q: "Which combination best helps learners understand folk knowledge?",
     options: [
-      "Community wisdom and life lessons",
-      "Only numbers",
-      "Only maps",
-      "Only modern slang"
+      "Word + meaning + pronunciation + cultural context",
+      "Only a logo",
+      "Only a page counter",
+      "Only a dictionary list"
     ],
-
     correct: 0
   }
-
 ];
 
 
 let currentQuiz = 0;
 let score = 0;
 
-
-/* XP */
-
 let xp = Number(
   localStorage.getItem("lokvaaniXP") || 0
 );
 
-const xpValue =
-  document.getElementById("xpValue");
+
+// -------------------------
+// XP
+// -------------------------
+
+const xpValue = document.getElementById("xpValue");
 
 if (xpValue) {
   xpValue.textContent = xp;
 }
 
 
-/* =========================================
-   RENDER CONTENT
-========================================= */
+// -------------------------
+// EXPLORE CONTENT
+// -------------------------
 
-function renderContent(){
+function renderContent() {
 
   const searchInput =
     document.getElementById("searchInput");
@@ -182,12 +174,12 @@ function renderContent(){
     document.getElementById("contentGrid");
 
 
-  if(
+  if (
     !searchInput ||
     !typeFilter ||
     !regionFilter ||
     !contentGrid
-  ){
+  ) {
     return;
   }
 
@@ -197,52 +189,117 @@ function renderContent(){
       .toLowerCase()
       .trim();
 
-
   const type =
     typeFilter.value;
-
 
   const region =
     regionFilter.value;
 
 
-  const items =
-    content.filter(item => {
+  const items = content.filter(x =>
 
-      const matchesType =
-        type === "all" ||
-        item.type === type;
+    (type === "all" || x.type === type) &&
 
+    (region === "all" || x.region === region) &&
 
-      const matchesRegion =
-        region === "all" ||
-        item.region === region;
+    `${x.title} ${x.region} ${x.language} ${x.desc}`
+      .toLowerCase()
+      .includes(q)
 
-
-      const searchableText =
-        `${item.title}
-        ${item.region}
-        ${item.language}
-        ${item.desc}`
-          .toLowerCase();
+  );
 
 
-      const matchesSearch =
-        searchableText.includes(q);
+  contentGrid.innerHTML = items.length
 
+    ? items.map(x => `
 
-      return (
-        matchesType &&
-        matchesRegion &&
-        matchesSearch
-      );
+      <article class="content-card">
 
-    });
+        <div class="card-icon">
+          ${x.icon}
+        </div>
 
+        <span class="tag">
+          ${getTypeName(x.type)}
+        </span>
 
-  if(!items.length){
+        <h3>
+          ${x.title}
+        </h3>
 
-    contentGrid.innerHTML = `
+        <p>
+          ${x.language} • ${x.region}
+        </p>
+
+        <p>
+          ${x.desc}
+        </p>
+
+        <div class="card-bottom">
+
+          <span class="verified">
+            ✓ ${x.verified}
+          </span>
+
+          ${
+            x.type === "word"
+
+              ? `<button
+                  class="audio-btn"
+                  onclick="speak('${escapeText(
+                    x.title +
+                    " is a regional language example from " +
+                    x.region
+                  )}')">
+                  🔊 Hear
+                </button>`
+
+              : x.type === "song"
+
+              ? `<button
+                  class="audio-btn"
+                  onclick="showToast('Demo folk-song audio selected.')">
+                  🎵 Listen
+                </button>`
+
+              : x.type === "story"
+
+              ? `<button
+                  class="audio-btn"
+                  onclick="showToast('Folk story lesson opened.')">
+                  📖 Read
+                </button>`
+
+              : x.type === "proverb"
+
+              ? `<button
+                  class="audio-btn"
+                  onclick="showToast('Proverb lesson opened.')">
+                  💡 Learn
+                </button>`
+
+              : x.type === "oral"
+
+              ? `<button
+                  class="audio-btn"
+                  onclick="showToast('Oral history selected.')">
+                  🎙️ Listen
+                </button>`
+
+              : `<button
+                  class="audio-btn"
+                  onclick="showToast('Traditional knowledge lesson opened.')">
+                  🌱 Explore
+                </button>`
+          }
+
+        </div>
+
+      </article>
+
+    `).join("")
+
+    : `
 
       <div
         class="content-card"
@@ -254,110 +311,60 @@ function renderContent(){
         </h3>
 
         <p>
-          Try another word, language,
-          region or content type.
+          Try another word, content type or region.
         </p>
 
       </div>
 
     `;
-
-    return;
-  }
-
-
-  contentGrid.innerHTML =
-
-    items.map(item => `
-
-      <article class="content-card">
-
-        <div class="card-icon">
-          ${item.icon}
-        </div>
-
-        <span class="tag">
-          ${item.type.replace("-", " ")}
-        </span>
-
-        <h3>
-          ${item.title}
-        </h3>
-
-        <p>
-          ${item.language} • ${item.region}
-        </p>
-
-        <p>
-          ${item.desc}
-        </p>
-
-        <div class="card-bottom">
-
-          <span class="verified">
-            ✓ ${item.verified}
-          </span>
-
-          ${
-            item.type === "word"
-
-              ? `
-                <button
-                  class="audio-btn"
-                  onclick="speakWord('${item.title}')"
-                >
-                  🔊 Listen
-                </button>
-              `
-
-              : item.type === "story"
-
-              ? `
-                <button
-                  class="audio-btn"
-                  onclick="showToast('Folk story opened!')"
-                >
-                  📖 Open
-                </button>
-              `
-
-              : item.type === "song"
-
-              ? `
-                <button
-                  class="audio-btn"
-                  onclick="showToast('Demo folk song selected!')"
-                >
-                  🎵 Listen
-                </button>
-              `
-
-              : `
-                <button
-                  class="audio-btn"
-                  onclick="showToast('Proverb activity opened!')"
-                >
-                  💬 Explore
-                </button>
-              `
-          }
-
-        </div>
-
-      </article>
-
-    `).join("");
-
 }
 
 
-/* =========================================
-   SPEECH
-========================================= */
+// -------------------------
+// CONTENT TYPE NAMES
+// -------------------------
 
-function speakWord(word){
+function getTypeName(type) {
 
-  if(!("speechSynthesis" in window)){
+  const names = {
+
+    word: "Words & Vocabulary",
+
+    story: "Folk Story",
+
+    proverb: "Proverb & Idiom",
+
+    song: "Folk Song",
+
+    oral: "Oral History",
+
+    knowledge: "Traditional Knowledge"
+
+  };
+
+  return names[type] || type;
+}
+
+
+// -------------------------
+// SAFELY USE TEXT IN BUTTONS
+// -------------------------
+
+function escapeText(text) {
+
+  return text
+    .replace(/\\/g, "\\\\")
+    .replace(/'/g, "\\'");
+}
+
+
+// -------------------------
+// SPEECH
+// -------------------------
+
+function speak(text) {
+
+  if (!("speechSynthesis" in window)) {
 
     showToast(
       "Speech is not supported in this browser."
@@ -370,95 +377,26 @@ function speakWord(word){
   speechSynthesis.cancel();
 
 
-  let text;
-
-
-  if(word === "Aai"){
-
-    text =
-      "Aai. Aai means mother in Marathi.";
-
-  }
-
-  else if(word === "Namaskar"){
-
-    text =
-      "Namaskar. A respectful Marathi greeting.";
-
-  }
-
-  else if(word === "Sat Sri Akal"){
-
-    text =
-      "Sat Sri Akal. A Punjabi greeting.";
-
-  }
-
-  else{
-
-    text = word;
-
-  }
-
-
-  const utterance =
+  const u =
     new SpeechSynthesisUtterance(text);
 
+  u.rate = 0.8;
 
-  utterance.rate = .8;
 
-
-  speechSynthesis.speak(
-    utterance
-  );
+  speechSynthesis.speak(u);
 
 
   showToast(
-    "🔊 Playing pronunciation..."
+    "Playing pronunciation…"
   );
-
 }
 
 
-function speak(text){
+// -------------------------
+// CONTRIBUTION MODAL
+// -------------------------
 
-  if(!("speechSynthesis" in window)){
-
-    showToast(
-      "Speech is not supported in this browser."
-    );
-
-    return;
-  }
-
-
-  speechSynthesis.cancel();
-
-
-  const utterance =
-    new SpeechSynthesisUtterance(text);
-
-
-  utterance.rate = .8;
-
-
-  speechSynthesis.speak(
-    utterance
-  );
-
-
-  showToast(
-    "🔊 Playing demo voice..."
-  );
-
-}
-
-
-/* =========================================
-   CONTRIBUTION MODAL
-========================================= */
-
-function openContribution(){
+function openContribution() {
 
   const modal =
     document.getElementById(
@@ -466,7 +404,7 @@ function openContribution(){
     );
 
 
-  if(modal){
+  if (modal) {
 
     modal.classList.add("open");
 
@@ -476,11 +414,10 @@ function openContribution(){
     );
 
   }
-
 }
 
 
-function closeContribution(){
+function closeContribution() {
 
   const modal =
     document.getElementById(
@@ -488,7 +425,7 @@ function closeContribution(){
     );
 
 
-  if(modal){
+  if (modal) {
 
     modal.classList.remove("open");
 
@@ -498,30 +435,25 @@ function closeContribution(){
     );
 
   }
-
 }
 
 
-/* =========================================
-   TOAST
-========================================= */
+// -------------------------
+// TOAST
+// -------------------------
 
-function showToast(message){
+function showToast(msg) {
 
-  const toast =
+  const t =
     document.getElementById("toast");
 
 
-  if(!toast){
-    return;
-  }
+  if (!t) return;
 
 
-  toast.textContent =
-    message;
+  t.textContent = msg;
 
-
-  toast.classList.add("show");
+  t.classList.add("show");
 
 
   clearTimeout(
@@ -532,18 +464,16 @@ function showToast(message){
   window.toastTimer =
     setTimeout(() => {
 
-      toast.classList.remove(
-        "show"
-      );
+      t.classList.remove("show");
 
     }, 2600);
 
 }
 
 
-/* =========================================
-   CONTRIBUTION FORM
-========================================= */
+// -------------------------
+// CONTRIBUTION FORM
+// -------------------------
 
 const contributionForm =
   document.getElementById(
@@ -551,13 +481,13 @@ const contributionForm =
   );
 
 
-if(contributionForm){
+if (contributionForm) {
 
   contributionForm.addEventListener(
     "submit",
-    function(event){
+    e => {
 
-      event.preventDefault();
+      e.preventDefault();
 
 
       const old =
@@ -580,7 +510,7 @@ if(contributionForm){
         );
 
 
-      if(impactTotal){
+      if (impactTotal) {
 
         impactTotal.textContent =
           110 + old + 1;
@@ -588,14 +518,13 @@ if(contributionForm){
       }
 
 
-      this.reset();
-
+      e.target.reset();
 
       closeContribution();
 
 
       showToast(
-        "✓ Thank you! Your knowledge is now in the demo review queue."
+        "Thank you! Your contribution is now in the review queue."
       );
 
     }
@@ -604,13 +533,14 @@ if(contributionForm){
 }
 
 
-/* =========================================
-   QUIZ
-========================================= */
+// -------------------------
+// QUIZ
+// -------------------------
 
-function startQuiz(){
+function startQuiz() {
 
   currentQuiz = 0;
+
   score = 0;
 
 
@@ -620,7 +550,7 @@ function startQuiz(){
     );
 
 
-  if(modal){
+  if (modal) {
 
     modal.classList.add("open");
 
@@ -633,11 +563,10 @@ function startQuiz(){
 
 
   renderQuiz();
-
 }
 
 
-function closeQuiz(){
+function closeQuiz() {
 
   const modal =
     document.getElementById(
@@ -645,11 +574,9 @@ function closeQuiz(){
     );
 
 
-  if(modal){
+  if (modal) {
 
-    modal.classList.remove(
-      "open"
-    );
+    modal.classList.remove("open");
 
     modal.setAttribute(
       "aria-hidden",
@@ -657,11 +584,10 @@ function closeQuiz(){
     );
 
   }
-
 }
 
 
-function renderQuiz(){
+function renderQuiz() {
 
   const quizContent =
     document.getElementById(
@@ -669,9 +595,7 @@ function renderQuiz(){
     );
 
 
-  if(!quizContent){
-    return;
-  }
+  if (!quizContent) return;
 
 
   const item =
@@ -681,53 +605,36 @@ function renderQuiz(){
   quizContent.innerHTML = `
 
     <div class="mini-label">
-
-      QUESTION
-      ${currentQuiz + 1}
-      OF
-      ${quiz.length}
-
+      QUESTION ${currentQuiz + 1}
+      OF ${quiz.length}
     </div>
 
-
     <h2 style="font-size:32px">
-
       ${item.q}
-
     </h2>
-
 
     <div>
 
-      ${
-        item.options.map(
-          (option, index) => `
+      ${item.options.map(
+        (o, i) => `
 
-            <button
-              class="quiz-option"
-              onclick="answerQuiz(${index})"
-            >
+          <button
+            class="quiz-option"
+            onclick="answerQuiz(${i})"
+          >
+            ${o}
+          </button>
 
-              ${option}
-
-            </button>
-
-          `
-        ).join("")
-      }
+        `
+      ).join("")}
 
     </div>
 
   `;
-
 }
 
 
-/* =========================================
-   ANSWER QUIZ
-========================================= */
-
-function answerQuiz(index){
+function answerQuiz(i) {
 
   const item =
     quiz[currentQuiz];
@@ -735,22 +642,22 @@ function answerQuiz(index){
 
   document
     .querySelectorAll(".quiz-option")
-    .forEach((button, number) => {
+    .forEach((b, n) => {
 
-      button.disabled = true;
+      b.disabled = true;
 
 
-      if(number === item.correct){
+      if (n === item.correct) {
 
-        button.classList.add(
+        b.classList.add(
           "correct"
         );
 
       }
 
-      else if(number === index){
+      else if (n === i) {
 
-        button.classList.add(
+        b.classList.add(
           "wrong"
         );
 
@@ -759,7 +666,7 @@ function answerQuiz(index){
     });
 
 
-  if(index === item.correct){
+  if (i === item.correct) {
 
     score++;
 
@@ -778,25 +685,12 @@ function answerQuiz(index){
       );
 
 
-    if(xpValue){
+    if (xpValue) {
 
       xpValue.textContent =
         xp;
 
     }
-
-
-    showToast(
-      "✓ Correct! +20 XP"
-    );
-
-  }
-
-  else{
-
-    showToast(
-      "Not quite — keep learning!"
-    );
 
   }
 
@@ -806,16 +700,16 @@ function answerQuiz(index){
     currentQuiz++;
 
 
-    if(
+    if (
       currentQuiz <
       quiz.length
-    ){
+    ) {
 
       renderQuiz();
 
     }
 
-    else{
+    else {
 
       updateProgress();
 
@@ -826,44 +720,41 @@ function answerQuiz(index){
         );
 
 
-      if(quizContent){
+      if (quizContent) {
 
         quizContent.innerHTML = `
 
           <div class="quiz-result">
 
-            <div style="font-size:55px">
+            <div
+              style="font-size:55px"
+            >
               🏆
             </div>
 
             <div class="section-label">
-              CHALLENGE COMPLETE
+              QUIZ COMPLETE
             </div>
 
-            <h2 style="font-size:40px">
-
+            <h2
+              style="font-size:40px"
+            >
+              You scored
               ${score}/${quiz.length}
-
             </h2>
 
             <p>
-
               You earned
-              ${score * 20}
-              XP.
-
-              Keep exploring
-              languages and folk knowledge!
-
+              ${score * 20} XP.
+              Keep exploring language
+              and folk knowledge!
             </p>
 
             <button
               class="btn primary"
               onclick="closeQuiz()"
             >
-
-              Continue learning
-
+              Continue exploring
             </button>
 
           </div>
@@ -879,11 +770,11 @@ function answerQuiz(index){
 }
 
 
-/* =========================================
-   PROGRESS
-========================================= */
+// -------------------------
+// PROGRESS
+// -------------------------
 
-function updateProgress(){
+function updateProgress() {
 
   const pct =
     Math.min(
@@ -904,7 +795,7 @@ function updateProgress(){
     );
 
 
-  if(progressBar){
+  if (progressBar) {
 
     progressBar.style.width =
       pct + "%";
@@ -912,7 +803,7 @@ function updateProgress(){
   }
 
 
-  if(progressText){
+  if (progressText) {
 
     progressText.textContent =
       pct + "% complete";
@@ -922,9 +813,9 @@ function updateProgress(){
 }
 
 
-/* =========================================
-   FILTERS
-========================================= */
+// -------------------------
+// EXPLORE FILTERS
+// -------------------------
 
 const searchInput =
   document.getElementById(
@@ -944,7 +835,7 @@ const regionFilter =
   );
 
 
-if(searchInput){
+if (searchInput) {
 
   searchInput.addEventListener(
     "input",
@@ -954,7 +845,7 @@ if(searchInput){
 }
 
 
-if(typeFilter){
+if (typeFilter) {
 
   typeFilter.addEventListener(
     "change",
@@ -964,7 +855,7 @@ if(typeFilter){
 }
 
 
-if(regionFilter){
+if (regionFilter) {
 
   regionFilter.addEventListener(
     "change",
@@ -974,9 +865,14 @@ if(regionFilter){
 }
 
 
-/* =========================================
-   MOBILE MENU
-========================================= */
+renderContent();
+
+updateProgress();
+
+
+// -------------------------
+// MOBILE MENU
+// -------------------------
 
 const menuToggle =
   document.getElementById(
@@ -990,7 +886,10 @@ const mainNav =
   );
 
 
-if(menuToggle && mainNav){
+if (
+  menuToggle &&
+  mainNav
+) {
 
   menuToggle.addEventListener(
     "click",
@@ -1008,9 +907,9 @@ if(menuToggle && mainNav){
     .querySelectorAll(
       "#mainNav a"
     )
-    .forEach(link => {
+    .forEach(a => {
 
-      link.addEventListener(
+      a.addEventListener(
         "click",
         () => {
 
@@ -1024,12 +923,3 @@ if(menuToggle && mainNav){
     });
 
 }
-
-
-/* =========================================
-   INITIAL LOAD
-========================================= */
-
-renderContent();
-
-updateProgress();
