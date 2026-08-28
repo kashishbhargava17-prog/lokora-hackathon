@@ -81,7 +81,14 @@
       </div>
       <div class="filters">
         <input id="searchInput" type="search" placeholder="Search a word, story, proverb or region..." />
-        <select id="typeFilter"><option value="a<select id="typeFilter">
+        <select id="typeFilter">
+  <option value="all">All content</option>
+  <option value="word">Words & Vocabulary</option>
+  <option value="story">Folk Stories</option>
+  <option value="proverb">Proverbs & Idioms</option>
+  <option value="song">Folk Songs</option>
+  <option value="oral">Oral Histories</option>
+        </select>
   <option value="all">All content</option>
   <option value="word">Words & Vocabulary</option>
   <option value="story">Folk Stories</option>
@@ -90,7 +97,13 @@
   <option value="oral">Oral Histories</option>
   <option value="knowledge">Traditional Knowledge</option>
         </select>
-        <select id="regionFilter"><option value="all">All regions</option><option value="Maharashtra">Maharashtra</option><option value="Punjab">Punjab</option><option value="West Bengal">West Bengal</option><option value="Rajasthan">Rajasthan</option></select>
+        <select id="regionFilter">
+  <option value="all">All regions</option>
+  <option value="Maharashtra">Maharashtra</option>
+  <option value="Punjab">Punjab</option>
+  <option value="West Bengal">West Bengal</option>
+  <option value="Rajasthan">Rajasthan</option>
+</select>
       </div>
       <div id="contentGrid" class="content-grid"></div>
     </section>
