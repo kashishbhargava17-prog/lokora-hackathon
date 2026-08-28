@@ -82,11 +82,21 @@
       <div class="filters">
         <input id="searchInput" type="search" placeholder="Search a word, story, proverb or region..." />
         <select id="typeFilter">
-  <option value="all">All content</option>
-  <option value="word">Words & Vocabulary</option>
-  <option value="story">Folk Stories</option>
-  <option value="proverb">Proverbs & Idioms</option>
-  <option value="song">Folk Songs</option>
+  <optio<div class="custom-filter" id="typeFilterBox">
+  <button class="filter-button" type="button" onclick="toggleTypeFilter()">
+    <span id="typeFilterLabel">All content</span>
+    <span>⌄</span>
+  </button>
+
+  <div class="filter-menu" id="typeFilterMenu">
+    <button type="button" onclick="chooseType('all', 'All content')">All content</button>
+    <button type="button" onclick="chooseType('word', 'Words')">Words</button>
+    <button type="button" onclick="chooseType('phrase', 'Phrases')">Phrases</button>
+    <button type="button" onclick="chooseType('proverb', 'Proverbs')">Proverbs</button>
+    <button type="button" onclick="chooseType('story', 'Folk Stories')">Folk Stories</button>
+    <button type="button" onclick="chooseType('song', 'Folk Songs')">Folk Songs</button>
+  </div>
+  </div>
   <option value="oral">Oral Histories</option>
         </select>
   <option value="all">All content</option>
