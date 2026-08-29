@@ -1,7 +1,9 @@
 /* =========================================================
-   LOKVAANI
-   INTERACTIVE LANGUAGE & FOLK KNOWLEDGE
-   Complete interaction script
+   LOKORA
+   Legacy Of Knowledge, Oral Records & Ancestry
+
+   Interactive Language & Folk Knowledge
+   Heritage & Culture Hackathon Prototype
    ========================================================= */
 
 
@@ -182,11 +184,11 @@ let score = 0;
 
 
 /* =========================================================
-   XP
+   XP & PROGRESS
    ========================================================= */
 
 let xp = Number(
-  localStorage.getItem("lokvaaniXP") || 0
+  localStorage.getItem("lokoraXP") || 0
 );
 
 
@@ -198,12 +200,9 @@ function updateXPDisplay() {
   if (xpValue) {
     xpValue.textContent = xp;
   }
+
 }
 
-
-/* =========================================================
-   PROGRESS
-   ========================================================= */
 
 function updateProgress() {
 
@@ -223,13 +222,16 @@ function updateProgress() {
 
     progressBar.style.width =
       percentage + "%";
+
   }
 
   if (progressText) {
 
     progressText.textContent =
       percentage + "% complete";
+
   }
+
 }
 
 
@@ -267,8 +269,10 @@ function renderContent() {
       .toLowerCase()
       .trim();
 
+
   const selectedType =
     typeFilter.value;
+
 
   const selectedRegion =
     regionFilter.value;
@@ -347,21 +351,20 @@ function renderContent() {
     `;
 
     return;
+
   }
 
 
   contentGrid.innerHTML =
-    results.map(item => {
-
-      return createContentCard(item);
-
-    }).join("");
+    results
+      .map(item => createContentCard(item))
+      .join("");
 
 }
 
 
 /* =========================================================
-   CREATE EXPLORE CARD
+   CREATE CONTENT CARD
    ========================================================= */
 
 function createContentCard(item) {
@@ -462,26 +465,21 @@ function createContentCard(item) {
         ${item.icon}
       </div>
 
-
       <span class="tag">
         ${formatType(item.type)}
       </span>
-
 
       <h3>
         ${item.title}
       </h3>
 
-
       <p>
         ${item.language} • ${item.region}
       </p>
 
-
       <p>
         ${item.desc}
       </p>
-
 
       <div class="card-bottom">
 
@@ -501,7 +499,7 @@ function createContentCard(item) {
 
 
 /* =========================================================
-   FORMAT CONTENT TYPE
+   CONTENT TYPE
    ========================================================= */
 
 function formatType(type) {
@@ -593,10 +591,6 @@ function showAllContent() {
 }
 
 
-/* =========================================================
-   RESET FILTERS
-   ========================================================= */
-
 function resetExploreFilters() {
 
   showAllContent();
@@ -656,7 +650,7 @@ function setupExplore() {
 
 
 /* =========================================================
-   PRONUNCIATION
+   SPEECH / PRONUNCIATION
    ========================================================= */
 
 function speak(text) {
@@ -697,16 +691,11 @@ function speak(text) {
 }
 
 
-/* =========================================================
-   PLAY PRONUNCIATION
-   ========================================================= */
-
 function playPronunciation(word) {
 
   const pronunciationMap = {
 
-    "Aai":
-      "Aai",
+    "Aai": "Aai",
 
     "Local Village Words":
       "Local village words"
@@ -724,7 +713,7 @@ function playPronunciation(word) {
 
 
 /* =========================================================
-   VOICES OF ELDERS
+   VOICES OF KNOWLEDGE HOLDERS
    ========================================================= */
 
 function playDemoVoice() {
@@ -736,7 +725,7 @@ function playDemoVoice() {
 
 
   speak(
-    "Welcome to LokVaani. Every voice carries a piece of knowledge."
+    "Welcome to Lokora. Legacy Of Knowledge, Oral Records and Ancestry. Every voice carries a piece of knowledge."
   );
 
 
@@ -773,7 +762,7 @@ function openOralHistory() {
 
     "ORAL HISTORY",
 
-    "This demo shows how LokVaani can preserve a knowledge holder's memory. A complete version can include a consented recording, transcript, original language, translation, regional context and information about the person who shared it."
+    "This demo shows how Lokora can preserve a knowledge holder's memory. A complete version can include a consented recording, transcript, original language, translation, regional context and information about the person who shared it."
 
   );
 
@@ -830,7 +819,7 @@ function openProverbLesson() {
 
     "PROVERBS & IDIOMS",
 
-    "Proverbs preserve wisdom through generations. A LokVaani lesson can explain the original proverb, its meaning, when people use it, its cultural context and then give learners a short situation-based activity."
+    "Proverbs preserve wisdom through generations. A Lokora lesson can explain the original proverb, its meaning, when people use it, its cultural context and then give learners a short situation-based activity."
 
   );
 
@@ -857,7 +846,7 @@ function openVocabularyLesson() {
 
 
 /* =========================================================
-   HERITAGE / KNOWLEDGE INFO
+   CULTURAL KNOWLEDGE
    ========================================================= */
 
 function openHeritageInfo(title) {
@@ -868,8 +857,100 @@ function openHeritageInfo(title) {
 
     "CULTURAL KNOWLEDGE",
 
-    "This LokVaani entry focuses on living language and folk knowledge. Content can include regional vocabulary, oral traditions, stories, songs, proverbs, pronunciation and cultural context."
+    "This Lokora entry focuses on living language and folk knowledge. Content can include regional vocabulary, oral traditions, stories, songs, proverbs, pronunciation and cultural context."
 
+  );
+
+}
+
+
+/* =========================================================
+   INFO MODAL
+   ========================================================= */
+
+function showInfoModal(
+  title,
+  label,
+  description
+) {
+
+  const modal =
+    document.getElementById(
+      "infoModal"
+    );
+
+
+  const titleElement =
+    document.getElementById(
+      "infoTitle"
+    );
+
+
+  const labelElement =
+    document.getElementById(
+      "infoLabel"
+    );
+
+
+  const descriptionElement =
+    document.getElementById(
+      "infoDescription"
+    );
+
+
+  if (!modal) {
+
+    showToast(description);
+
+    return;
+
+  }
+
+
+  if (titleElement) {
+    titleElement.textContent = title;
+  }
+
+
+  if (labelElement) {
+    labelElement.textContent = label;
+  }
+
+
+  if (descriptionElement) {
+    descriptionElement.textContent =
+      description;
+  }
+
+
+  modal.classList.add("open");
+
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+}
+
+
+function closeInfoModal() {
+
+  const modal =
+    document.getElementById(
+      "infoModal"
+    );
+
+
+  if (!modal) return;
+
+
+  modal.classList.remove("open");
+
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
   );
 
 }
@@ -956,7 +1037,7 @@ function setupContributionForm() {
       const previous =
         Number(
           localStorage.getItem(
-            "lokvaaniSubmissions"
+            "lokoraSubmissions"
           ) || 0
         );
 
@@ -966,7 +1047,7 @@ function setupContributionForm() {
 
 
       localStorage.setItem(
-        "lokvaaniSubmissions",
+        "lokoraSubmissions",
         newTotal
       );
 
@@ -1041,10 +1122,6 @@ function startQuiz() {
 
 }
 
-
-/* =========================================================
-   CLOSE QUIZ
-   ========================================================= */
 
 function closeQuiz() {
 
@@ -1140,50 +1217,432 @@ function renderQuiz() {
 
 function answerQuiz(index) {
 
-  const question =
-    quiz[currentQuiz];
+const question = quiz[currentQuiz];
+
+if (!question) return;
+
+const options =
+document.querySelectorAll(".quiz-option");
+
+options.forEach((button, number) => {
+
+button.disabled = true;
+
+if (number === question.correct) {
+  button.classList.add("correct");
+}
+
+if (
+  number === index &&
+  number !== question.correct
+) {
+  button.classList.add("wrong");
+}
+
+});
+
+if (index === question.correct) {
+
+score++;
+
+xp += 10;
+
+localStorage.setItem(
+  "lokoraXP",
+  xp
+);
+
+showToast("Correct! +10 XP 🌱");
+
+} else {
+
+showToast("Not quite! Keep learning 🌿");
+
+}
+
+setTimeout(() => {
+
+currentQuiz++;
+
+renderQuiz();
+
+}, 900);
+
+}
+
+/* =========================================================
+FINISH QUIZ
+========================================================= */
+
+function finishQuiz() {
+
+const quizContent =
+document.getElementById("quizContent");
+
+if (!quizContent) return;
+
+updateXPDisplay();
+updateProgress();
+
+let message = "";
+
+if (score === quiz.length) {
+message =
+"Excellent! You are becoming a true Culture Keeper.";
+}
+else if (score >= 2) {
+message =
+"Great work! Keep exploring India's living heritage.";
+}
+else {
+message =
+"Every journey begins with learning. Explore more and try again!";
+}
+
+quizContent.innerHTML = `
+
+<div class="quiz-result">
+
+  <div style="font-size:55px">
+    🏆
+  </div>
+
+  <div class="section-label">
+    LOKORA LEARNING
+  </div>
+
+  <h2>
+    Quiz complete!
+  </h2>
+
+  <p>
+    You scored
+    <strong>${score}</strong>
+    out of
+    <strong>${quiz.length}</strong>.
+  </p>
+
+  <p>
+    ${message}
+  </p>
+
+  <button
+    class="btn primary"
+    type="button"
+    onclick="closeQuiz()"
+  >
+    Continue exploring →
+  </button>
+
+</div>
+
+`;
+
+}
+
+/* =========================================================
+INFO MODAL
+========================================================= */
+
+function showInfoModal(title, label, description) {
+
+let modal =
+document.getElementById("infoModal");
+
+if (!modal) {
+
+modal = document.createElement("div");
+
+modal.id = "infoModal";
+
+modal.className = "modal";
+
+modal.setAttribute(
+  "aria-hidden",
+  "true"
+);
 
 
-  if (!question) return;
+modal.innerHTML = `
+
+  <div
+    class="modal-backdrop"
+    onclick="closeInfoModal()"
+  ></div>
+
+  <div class="modal-card knowledge-card">
+
+    <button
+      class="modal-close"
+      type="button"
+      onclick="closeInfoModal()"
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+    <div class="knowledge-icon">
+      🌿
+    </div>
+
+    <div class="section-label">
+      ${label}
+    </div>
+
+    <h2>
+      ${title}
+    </h2>
+
+    <p>
+      ${description}
+    </p>
+
+    <div class="knowledge-detail">
+
+      <strong>
+        About this prototype
+      </strong>
+
+      <p>
+        LOKORA — Legacy Of Knowledge, Oral Records &amp;
+        Ancestry — is designed to connect knowledge holders
+        with young learners and help preserve India's
+        living languages, stories and folk traditions.
+      </p>
+
+    </div>
+
+    <button
+      class="btn primary"
+      type="button"
+      onclick="closeInfoModal()"
+    >
+      Done
+    </button>
+
+  </div>
+
+`;
 
 
-  const options =
-    document.querySelectorAll(
-      ".quiz-option"
-    );
+document.body.appendChild(modal);
+
+}
+
+const labelElement =
+modal.querySelector(".section-label");
+
+const titleElement =
+modal.querySelector("h2");
+
+const paragraphs =
+modal.querySelectorAll(
+".knowledge-card > p"
+);
+
+if (labelElement) {
+labelElement.textContent = label;
+}
+
+if (titleElement) {
+titleElement.textContent = title;
+}
+
+if (paragraphs[0]) {
+paragraphs[0].textContent = description;
+}
+
+modal.classList.add("open");
+
+modal.setAttribute(
+"aria-hidden",
+"false"
+);
+
+}
+
+/* =========================================================
+CLOSE INFO MODAL
+========================================================= */
+
+function closeInfoModal() {
+
+const modal =
+document.getElementById("infoModal");
+
+if (!modal) return;
+
+modal.classList.remove("open");
+
+modal.setAttribute(
+"aria-hidden",
+"true"
+);
+
+}
+
+/* =========================================================
+MOBILE NAVIGATION
+========================================================= */
+
+function setupMobileMenu() {
+
+const toggle =
+document.getElementById("menuToggle");
+
+const nav =
+document.getElementById("mainNav");
+
+if (!toggle || !nav) return;
+
+toggle.addEventListener(
+"click",
+() => {
+
+  const isOpen =
+    nav.classList.toggle("open");
 
 
-  options.forEach(
-    (button, number) => {
-
-      button.disabled = true;
-
-
-      if (
-        number === question.correct
-      ) {
-
-        button.classList.add(
-          "correct"
-        );
-
-      }
-
-
-      if (
-        number === index &&
-        number !== question.correct
-      ) {
-
-        button.classList.add(
-          "wrong"
-        );
-
-      }
-
-    }
+  toggle.setAttribute(
+    "aria-expanded",
+    String(isOpen)
   );
 
+}
 
-  if (
-    index === question.c
+);
+
+nav.querySelectorAll("a").forEach(link => {
+
+link.addEventListener(
+  "click",
+  () => {
+
+    nav.classList.remove("open");
+
+    toggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+);
+
+});
+
+}
+
+/* =========================================================
+XP INITIALIZATION
+========================================================= */
+
+function initializeXP() {
+
+updateXPDisplay();
+
+updateProgress();
+
+}
+
+/* =========================================================
+IMPACT INITIALIZATION
+========================================================= */
+
+function initializeImpact() {
+
+const submissions =
+Number(
+localStorage.getItem(
+"lokoraSubmissions"
+) || 0
+);
+
+const impactTotal =
+document.getElementById(
+"impactTotal"
+);
+
+if (impactTotal) {
+
+impactTotal.textContent =
+  110 + submissions;
+
+}
+
+}
+
+/* =========================================================
+ESCAPE KEY
+========================================================= */
+
+function setupKeyboardControls() {
+
+document.addEventListener(
+"keydown",
+event => {
+
+  if (event.key !== "Escape") return;
+
+
+  closeContribution();
+
+  closeQuiz();
+
+  closeInfoModal();
+
+}
+
+);
+
+}
+
+/* =========================================================
+TOAST
+========================================================= */
+
+let toastTimer;
+
+function showToast(message) {
+
+const toast =
+document.getElementById("toast");
+
+if (!toast) return;
+
+toast.textContent = message;
+
+toast.classList.add("show");
+
+clearTimeout(toastTimer);
+
+toastTimer =
+setTimeout(() => {
+
+  toast.classList.remove("show");
+
+}, 2800);
+
+}
+
+/* =========================================================
+MAIN INITIALIZATION
+========================================================= */
+
+document.addEventListener(
+"DOMContentLoaded",
+() => {
+
+setupExplore();
+
+setupContributionForm();
+
+setupMobileMenu();
+
+setupKeyboardControls();
+
+initializeXP();
+
+initializeImpact();
+
+}
+);
