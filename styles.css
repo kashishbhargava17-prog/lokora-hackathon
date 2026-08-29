@@ -242,12 +242,10 @@ line-height:1.8;
 }
 
 .hero-actions{
-display:flex;
-.hero-actions{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin:28px 0;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:28px 0;
 }
 
 .heritage-note{
