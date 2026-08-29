@@ -1248,3 +1248,88 @@ align-self:flex-start;
 }
 
   }
+  
+/* =========================================================
+   LOKORA VISUAL POLISH
+   ========================================================= */
+
+.hero-copy {
+  max-width: 680px;
+}
+
+.hero-text {
+  max-width: 620px;
+}
+
+.bridge-intro {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #cbd8d2;
+}
+
+.content-card,
+.lesson-card,
+.voice-cards article,
+.impact-card {
+  overflow: hidden;
+}
+
+.content-card h3,
+.lesson-card h3,
+.voice-cards h3,
+.impact-card h3 {
+  line-height: 1.2;
+}
+
+.content-card p,
+.lesson-card p,
+.voice-cards p {
+  line-height: 1.6;
+}
+
+.section-heading h2 {
+  margin-bottom: 15px;
+}
+
+.filters {
+  align-items: stretch;
+}
+
+.filters input,
+.filters select {
+  min-height: 48px;
+}
+
+.btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+
+  .hero {
+    text-align: left;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .hero-stats {
+    justify-content: flex-start;
+  }
+
+  .content-card {
+    min-height: 240px;
+  }
+
+  .section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .bridge {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+}
