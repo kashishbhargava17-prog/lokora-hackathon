@@ -1177,5 +1177,122 @@
             required
             placeholder="Meaning, story, cultural context, when it is used..."
           ></textarea>
+        </label>
 
+        <label>
+          Pronunciation / audio URL (optional)
+
+          <input
+            name="audio"
+            type="url"
+            placeholder="Optional audio link"
+          >
+        </label>
+
+        <div class="consent">
+
+          <input
+            id="consent"
+            type="checkbox"
+            required
+          >
+
+          <label for="consent">
+            I understand this is a demo submission and
+            real deployments should collect appropriate
+            consent and validation.
+          </label>
+
+        </div>
+
+        <button
+          class="btn primary full"
+          type="submit"
+        >
+          Submit for review →
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       QUIZ MODAL
+  ========================== -->
+
+  <div
+    id="quizModal"
+    class="modal"
+    aria-hidden="true"
+  >
+
+    <div
+      class="modal-backdrop"
+      onclick="closeQuiz()"
+    ></div>
+
+    <div class="modal-card quiz-card">
+
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeQuiz()"
+        aria-label="Close quiz"
+      >
+        ×
+      </button>
+
+      <div id="quizContent">
+
+        <div class="quiz-result">
+
+          <div style="font-size:55px">
+            🧠
+          </div>
+
+          <div class="section-label">
+            LOKVAANI LEARNING
+          </div>
+
+          <h2>
+            Ready to learn?
+          </h2>
+
+          <p>
+            Test what you know about language,
+            folk knowledge and cultural preservation.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       TOAST
+  ========================== -->
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script src="app.js"></script>
+
+</body>
+</html>
      
