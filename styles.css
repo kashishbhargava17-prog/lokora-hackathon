@@ -243,9 +243,25 @@ line-height:1.8;
 
 .hero-actions{
 display:flex;
+.hero-actions{
+display:flex;
 gap:12px;
 flex-wrap:wrap;
 margin:28px 0;
+}
+
+.heritage-note{
+display:inline-flex;
+align-items:center;
+gap:8px;
+margin-top:4px;
+padding:8px 13px;
+border-radius:999px;
+background:#f5ead7;
+color:var(--green);
+font-size:12px;
+font-weight:700;
+letter-spacing:.02em;
 }
 
 .hero-stats{
