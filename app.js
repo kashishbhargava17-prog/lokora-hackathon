@@ -6,11 +6,10 @@
 
 
 /* =========================================================
-   LANGUAGE & FOLK KNOWLEDGE CONTENT
+   CONTENT
    ========================================================= */
 
 const content = [
-
   {
     id: 1,
     type: "word",
@@ -18,142 +17,96 @@ const content = [
     title: "Aai",
     region: "Maharashtra",
     language: "Marathi",
-    desc: "Aai means mother in Marathi. It is a warm everyday word that reflects family and regional language.",
+    desc: "A Marathi word for mother, carrying an important place in everyday family language.",
     verified: "Community demo"
   },
 
   {
     id: 2,
     type: "word",
-    icon: "🌿",
-    title: "Jevlis Ka?",
+    icon: "💬",
+    title: "Paani",
     region: "Maharashtra",
     language: "Marathi",
-    desc: "A Marathi expression meaning 'Have you eaten?' Often used as a caring greeting between people.",
+    desc: "A familiar regional vocabulary example showing how everyday words connect language with culture.",
     verified: "Language demo"
   },
 
   {
     id: 3,
-    type: "proverb",
-    icon: "💬",
-    title: "अति तिथे माती",
-    region: "Maharashtra",
-    language: "Marathi",
-    desc: "A Marathi proverb expressing the idea that too much of anything can lead to undesirable results.",
-    verified: "Proverb demo"
-  },
-
-  {
-    id: 4,
-    type: "proverb",
-    icon: "🌾",
-    title: "Where there is unity",
-    region: "Punjab",
-    language: "Punjabi",
-    desc: "A folk saying about the strength that comes from people working together and supporting one another.",
-    verified: "Community demo"
-  },
-
-  {
-    id: 5,
     type: "story",
     icon: "📖",
     title: "The Clever Farmer",
     region: "Rajasthan",
     language: "Rajasthani",
-    desc: "A short folk-story lesson demonstrating how stories can preserve language, values and local wisdom.",
+    desc: "A folk-story learning experience combining storytelling, language, cultural context and questions.",
     verified: "Prototype"
   },
 
   {
-    id: 6,
-    type: "story",
-    icon: "🪶",
-    title: "The Wise Grandmother",
-    region: "West Bengal",
-    language: "Bengali",
-    desc: "A prototype oral story showing how knowledge can pass from elders to younger generations through storytelling.",
+    id: 4,
+    type: "proverb",
+    icon: "💡",
+    title: "Village Proverb",
+    region: "Rajasthan",
+    language: "Rajasthani",
+    desc: "A proverb activity showing how traditional sayings can teach ideas, values and everyday wisdom.",
     verified: "Community demo"
   },
 
   {
-    id: 7,
+    id: 5,
     type: "song",
     icon: "🎵",
-    title: "Baul Folk Song Tradition",
+    title: "Baul Folk Song",
     region: "West Bengal",
     language: "Bengali",
-    desc: "A Bengali folk tradition associated with travelling singers and oral transmission of songs and philosophy.",
+    desc: "A folk-music learning example connecting traditional singing with language and oral knowledge.",
     verified: "Review needed"
   },
 
   {
-    id: 8,
-    type: "song",
-    icon: "🎶",
-    title: "Lavani Song Tradition",
-    region: "Maharashtra",
-    language: "Marathi",
-    desc: "A performance tradition where rhythm, language and storytelling come together through song.",
-    verified: "Community demo"
-  },
-
-  {
-    id: 9,
+    id: 6,
     type: "oral-history",
     icon: "🎙️",
     title: "A Grandmother's Memory",
     region: "Maharashtra",
     language: "Marathi",
-    desc: "A prototype oral-history entry showing how memories of everyday life can be recorded and passed to younger generations.",
+    desc: "A prototype oral-history entry showing how memories can be preserved with transcripts and cultural context.",
     verified: "Prototype"
   },
 
   {
-    id: 10,
-    type: "oral-history",
-    icon: "👴",
-    title: "Stories From the Village",
-    region: "Rajasthan",
-    language: "Rajasthani",
-    desc: "A demonstration of how elders can share memories, local customs and community knowledge with young learners.",
-    verified: "Community demo"
-  },
-
-  {
-    id: 11,
-    type: "word",
-    icon: "📚",
-    title: "Pind",
+    id: 7,
+    type: "pronunciation",
+    icon: "🔊",
+    title: "Hear the Word",
     region: "Punjab",
     language: "Punjabi",
-    desc: "A Punjabi word commonly associated with a village or one's native village community.",
-    verified: "Language demo"
+    desc: "A pronunciation activity demonstrating how learners can hear regional words from knowledge holders.",
+    verified: "Audio demo"
   },
 
   {
-    id: 12,
-    type: "word",
-    icon: "🔤",
-    title: "Bhalo",
-    region: "West Bengal",
-    language: "Bengali",
-    desc: "A Bengali word meaning good or well, demonstrating how everyday vocabulary can be explored with pronunciation and context.",
-    verified: "Language demo"
+    id: 8,
+    type: "story",
+    icon: "📚",
+    title: "The Village Story",
+    region: "Punjab",
+    language: "Punjabi",
+    desc: "A story-based learning example combining a traditional narrative with vocabulary and cultural context.",
+    verified: "Prototype"
   }
-
 ];
 
 
 /* =========================================================
-   QUIZ QUESTIONS
+   QUIZ
    ========================================================= */
 
 const quiz = [
-
   {
-    q: "Which feature is most useful for preserving how a traditional word is actually spoken?",
+    q: "Which feature helps preserve the way a regional word is actually spoken?",
     options: [
       "A pronunciation recording",
       "Only a photograph",
@@ -167,51 +120,39 @@ const quiz = [
     q: "What is the best process for a community contribution?",
     options: [
       "Publish immediately",
-      "Submit → Review → Validate → Preserve",
+      "Submit → Review → Validate → Publish",
       "Delete every submission",
-      "Hide the contribution"
+      "Hide every contribution"
     ],
     correct: 1
   },
 
   {
-    q: "Which combination best teaches a folk story?",
+    q: "Which combination makes a folk story useful for learning?",
     options: [
       "Story + meaning + cultural context + activity",
-      "Only the title",
-      "Only a photograph",
-      "Only a page counter"
+      "Only a title",
+      "Only a picture",
+      "Only a score"
     ],
     correct: 0
   },
 
   {
-    q: "Why are elders important to LokVaani?",
+    q: "Who are the two main groups LokVaani connects?",
     options: [
-      "They are knowledge holders",
-      "They create leaderboards",
-      "They design the website",
-      "They replace young learners"
-    ],
-    correct: 0
-  },
-
-  {
-    q: "What does multilingual support allow learners to do?",
-    options: [
-      "Explore knowledge across languages and dialects",
-      "Use only English",
-      "Remove regional languages",
-      "Disable pronunciation"
+      "Knowledge holders and young learners",
+      "Tourists and hotels",
+      "Drivers and passengers",
+      "Shopkeepers and customers"
     ],
     correct: 0
   }
-
 ];
 
 
 /* =========================================================
-   GLOBAL VARIABLES
+   VARIABLES
    ========================================================= */
 
 let currentQuiz = 0;
@@ -223,23 +164,185 @@ let xp = Number(
 
 
 /* =========================================================
-   XP DISPLAY
+   XP
    ========================================================= */
 
 function updateXPDisplay() {
 
-  const xpValue =
+  const element =
     document.getElementById("xpValue");
 
-  if (xpValue) {
-    xpValue.textContent = xp;
+  if (element) {
+    element.textContent = xp;
   }
-
 }
 
 
 /* =========================================================
-   EXPLORE — RENDER CONTENT
+   TOAST
+   ========================================================= */
+
+function showToast(message) {
+
+  let toast =
+    document.getElementById("toast");
+
+  if (!toast) {
+
+    toast =
+      document.createElement("div");
+
+    toast.id = "toast";
+    toast.className = "toast";
+
+    document.body.appendChild(toast);
+  }
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(
+    window.lokvaaniToastTimer
+  );
+
+  window.lokvaaniToastTimer =
+    setTimeout(() => {
+
+      toast.classList.remove("show");
+
+    }, 2600);
+}
+
+
+/* =========================================================
+   INFORMATION MODAL
+   ========================================================= */
+
+function showInfoModal(
+  title,
+  subtitle,
+  message
+) {
+
+  let modal =
+    document.getElementById("infoModal");
+
+
+  if (!modal) {
+
+    modal =
+      document.createElement("div");
+
+    modal.id = "infoModal";
+    modal.className = "modal";
+
+    modal.innerHTML = `
+      <div class="modal-backdrop" id="infoBackdrop"></div>
+
+      <div class="modal-card">
+
+        <button
+          class="modal-close"
+          id="infoClose"
+          aria-label="Close">
+          ×
+        </button>
+
+        <div
+          class="section-label"
+          id="infoSubtitle">
+        </div>
+
+        <h2 id="infoTitle"></h2>
+
+        <p
+          id="infoMessage"
+          style="
+            color:var(--muted);
+            font-size:15px;
+            line-height:1.8;
+          ">
+        </p>
+
+        <button
+          class="btn primary"
+          id="infoContinue">
+          Continue exploring →
+        </button>
+
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+
+    document
+      .getElementById("infoClose")
+      .addEventListener(
+        "click",
+        closeInfoModal
+      );
+
+
+    document
+      .getElementById("infoBackdrop")
+      .addEventListener(
+        "click",
+        closeInfoModal
+      );
+
+
+    document
+      .getElementById("infoContinue")
+      .addEventListener(
+        "click",
+        closeInfoModal
+      );
+  }
+
+
+  document
+    .getElementById("infoTitle")
+    .textContent = title;
+
+
+  document
+    .getElementById("infoSubtitle")
+    .textContent = subtitle;
+
+
+  document
+    .getElementById("infoMessage")
+    .textContent = message;
+
+
+  modal.classList.add("open");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+}
+
+
+function closeInfoModal() {
+
+  const modal =
+    document.getElementById("infoModal");
+
+  if (!modal) return;
+
+  modal.classList.remove("open");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+}
+
+
+/* =========================================================
+   EXPLORE
    ========================================================= */
 
 function renderContent() {
@@ -281,67 +384,59 @@ function renderContent() {
     regionFilter.value;
 
 
-  const filtered =
+  const results =
     content.filter(item => {
 
-      const matchesType =
+      const typeMatch =
         selectedType === "all" ||
         item.type === selectedType;
 
 
-      const matchesRegion =
+      const regionMatch =
         selectedRegion === "all" ||
         item.region === selectedRegion;
 
 
-      const searchableText =
-        `
-        ${item.title}
-        ${item.region}
-        ${item.language}
-        ${item.desc}
-        ${item.type}
-        `
-        .toLowerCase();
+      const text =
+        (
+          item.title +
+          " " +
+          item.region +
+          " " +
+          item.language +
+          " " +
+          item.desc
+        )
+          .toLowerCase();
 
 
-      const matchesSearch =
-        searchableText.includes(search);
+      const searchMatch =
+        text.includes(search);
 
 
       return (
-        matchesType &&
-        matchesRegion &&
-        matchesSearch
+        typeMatch &&
+        regionMatch &&
+        searchMatch
       );
-
     });
 
 
-  if (!filtered.length) {
+  if (!results.length) {
 
     contentGrid.innerHTML = `
-
       <div
         class="content-card"
-        style="grid-column:1/-1"
-      >
+        style="grid-column:1/-1">
 
-        <div class="card-icon">
-          🔎
-        </div>
-
-        <h3>
-          No matches found
-        </h3>
+        <h3>No matches found</h3>
 
         <p>
           Try another word, language,
-          story or region.
+          region or content type.
         </p>
 
       </div>
-
     `;
 
     return;
@@ -349,113 +444,56 @@ function renderContent() {
 
 
   contentGrid.innerHTML =
-    filtered.map(createContentCard).join("");
-
+    results
+      .map(createContentCard)
+      .join("");
 }
 
 
 /* =========================================================
-   CREATE CONTENT CARD
+   CONTENT CARDS
    ========================================================= */
 
 function createContentCard(item) {
 
-  let actionButton = "";
+  let actionText = "Learn →";
+  let actionClass = "learn-action";
 
 
-  /* WORD */
-
-  if (item.type === "word") {
-
-    actionButton = `
-
-      <button
-        class="audio-btn"
-        onclick="playPronunciation('${escapeQuotes(item.title)}')"
-      >
-        🔊 Hear
-      </button>
-
-    `;
-
+  if (item.type === "story") {
+    actionText = "📖 Open story";
+    actionClass = "story-action";
   }
 
 
-  /* PROVERB */
-
-  else if (item.type === "proverb") {
-
-    actionButton = `
-
-      <button
-        class="audio-btn"
-        onclick="openProverb('${escapeQuotes(item.title)}')"
-      >
-        💬 Explore
-      </button>
-
-    `;
-
+  if (item.type === "proverb") {
+    actionText = "💡 Explore proverb";
+    actionClass = "proverb-action";
   }
 
 
-  /* STORY */
-
-  else if (item.type === "story") {
-
-    actionButton = `
-
-      <button
-        class="audio-btn"
-        onclick="openStory('${escapeQuotes(item.title)}')"
-      >
-        📖 Open story
-      </button>
-
-    `;
-
+  if (item.type === "song") {
+    actionText = "🎵 Listen";
+    actionClass = "song-action";
   }
 
 
-  /* SONG */
-
-  else if (item.type === "song") {
-
-    actionButton = `
-
-      <button
-        class="audio-btn"
-        onclick="openSong('${escapeQuotes(item.title)}')"
-      >
-        🎵 Listen
-      </button>
-
-    `;
-
+  if (item.type === "oral-history") {
+    actionText = "🎙️ Hear oral history";
+    actionClass = "oral-action";
   }
 
 
-  /* ORAL HISTORY */
-
-  else if (item.type === "oral-history") {
-
-    actionButton = `
-
-      <button
-        class="audio-btn"
-        onclick="openOralHistory('${escapeQuotes(item.title)}')"
-      >
-        🎙️ Hear story
-      </button>
-
-    `;
-
+  if (item.type === "pronunciation") {
+    actionText = "🔊 Hear pronunciation";
+    actionClass = "pronunciation-action";
   }
 
 
   return `
-
-    <article class="content-card">
+    <article
+      class="content-card"
+      data-content-id="${item.id}">
 
       <div class="card-icon">
         ${item.icon}
@@ -483,53 +521,128 @@ function createContentCard(item) {
           ✓ ${item.verified}
         </span>
 
-        ${actionButton}
+        <button
+          class="audio-btn ${actionClass}"
+          data-action="content"
+          data-id="${item.id}">
+          ${actionText}
+        </button>
 
       </div>
 
     </article>
-
   `;
-
 }
 
-
-/* =========================================================
-   FORMAT CONTENT TYPE
-   ========================================================= */
 
 function formatType(type) {
 
   const names = {
-
     "word": "Local vocabulary",
-
     "story": "Folk story",
-
     "proverb": "Proverb / idiom",
-
     "song": "Traditional song",
-
-    "oral-history": "Oral history"
-
+    "oral-history": "Oral history",
+    "pronunciation": "Pronunciation"
   };
 
-
-  return names[type] || type;
-
+  return (
+    names[type] ||
+    type
+  );
 }
 
 
 /* =========================================================
-   SAFE TEXT FOR BUTTONS
+   CONTENT ACTIONS
    ========================================================= */
 
-function escapeQuotes(text) {
+function handleContentAction(id) {
 
-  return text
-    .replace(/\\/g, "\\\\")
-    .replace(/'/g, "\\'");
+  const item =
+    content.find(
+      x => x.id === Number(id)
+    );
 
+
+  if (!item) return;
+
+
+  if (item.type === "story") {
+
+    showInfoModal(
+      item.title,
+      "FOLK STORY LESSON",
+      "This interactive story can include the original-language story, translation, vocabulary, cultural context and a short quiz. This prototype demonstrates that learning experience."
+    );
+
+    return;
+  }
+
+
+  if (item.type === "proverb") {
+
+    showInfoModal(
+      item.title,
+      "PROVERB & IDIOM",
+      "Learners can discover the meaning of this traditional saying, hear how it is pronounced, learn when it is used and try a situation-based activity."
+    );
+
+    return;
+  }
+
+
+  if (item.type === "song") {
+
+    showInfoModal(
+      item.title,
+      "TRADITIONAL SONG",
+      "A final version can connect a consented community recording with a transcript, translation, vocabulary and cultural context."
+    );
+
+    return;
+  }
+
+
+  if (item.type === "oral-history") {
+
+    showInfoModal(
+      item.title,
+      "ORAL HISTORY",
+      "This experience demonstrates how a knowledge holder's memory can be preserved through audio, transcript, language information and cultural context."
+    );
+
+    return;
+  }
+
+
+  if (item.type === "pronunciation") {
+
+    speak(
+      "This is a demonstration of pronunciation support in LokVaani."
+    );
+
+    return;
+  }
+
+
+  if (item.type === "word") {
+
+    speak(
+      item.title +
+      ". " +
+      item.desc
+    );
+
+    return;
+  }
+
+
+  showInfoModal(
+    item.title,
+    "LANGUAGE & FOLK KNOWLEDGE",
+    item.desc
+  );
 }
 
 
@@ -537,167 +650,108 @@ function escapeQuotes(text) {
    VIEW ALL
    ========================================================= */
 
-function setupViewAll() {
+function showAllContent() {
 
-  const viewAll =
-    document.querySelector(
-      '#explore .text-link'
+  const searchInput =
+    document.getElementById(
+      "searchInput"
+    );
+
+  const typeFilter =
+    document.getElementById(
+      "typeFilter"
+    );
+
+  const regionFilter =
+    document.getElementById(
+      "regionFilter"
     );
 
 
-  if (!viewAll) return;
+  if (searchInput) {
+    searchInput.value = "";
+  }
 
 
-  viewAll.addEventListener(
-    "click",
-    function(event) {
-
-      event.preventDefault();
+  if (typeFilter) {
+    typeFilter.value = "all";
+  }
 
 
-      const searchInput =
-        document.getElementById(
-          "searchInput"
-        );
-
-      const typeFilter =
-        document.getElementById(
-          "typeFilter"
-        );
-
-      const regionFilter =
-        document.getElementById(
-          "regionFilter"
-        );
+  if (regionFilter) {
+    regionFilter.value = "all";
+  }
 
 
-      if (searchInput) {
-        searchInput.value = "";
-      }
+  renderContent();
 
 
-      if (typeFilter) {
-        typeFilter.value = "all";
-      }
+  const explore =
+    document.getElementById(
+      "explore"
+    );
 
 
-      if (regionFilter) {
-        regionFilter.value = "all";
-      }
+  if (explore) {
 
-
-      renderContent();
-
-
-      const explore =
-        document.getElementById(
-          "explore"
-        );
-
-
-      if (explore) {
-
-        explore.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
-      }
-
-    }
-  );
-
+    explore.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
 }
 
 
 /* =========================================================
-   PRONUNCIATION
+   SPEECH / PRONUNCIATION
    ========================================================= */
 
-function playPronunciation(word) {
-
-  const pronunciationMap = {
-
-    "Aai":
-      "Aai",
-
-    "Jevlis Ka?":
-      "Jevlis Ka?",
-
-    "Pind":
-      "Pind",
-
-    "Bhalo":
-      "Bhalo"
-
-  };
-
-
-  const text =
-    pronunciationMap[word] || word;
-
-
-  speak(
-    text,
-    "Playing pronunciation for " + word
-  );
-
-}
-
-
-/* =========================================================
-   TEXT TO SPEECH
-   ========================================================= */
-
-function speak(
-  text,
-  message = "Playing pronunciation…"
-) {
+function speak(text) {
 
   if (
     !("speechSynthesis" in window)
   ) {
 
     showToast(
-      "Speech is not supported by this browser."
+      "Your browser does not support voice playback."
     );
 
     return;
   }
 
 
-  window.speechSynthesis.cancel();
+  speechSynthesis.cancel();
 
 
   const utterance =
-    new SpeechSynthesisUtterance(text);
+    new SpeechSynthesisUtterance(
+      text
+    );
 
 
-  utterance.rate = 0.78;
+  utterance.rate = 0.8;
   utterance.pitch = 1;
 
 
-  window.speechSynthesis.speak(
+  speechSynthesis.speak(
     utterance
   );
 
 
-  showToast(message);
-
+  showToast(
+    "🔊 Playing pronunciation…"
+  );
 }
 
 
 /* =========================================================
-   VOICES OF ELDERS — DEMO VOICE
+   VOICE OF ELDER
    ========================================================= */
 
 function playDemoVoice() {
 
   speak(
-    "Welcome to LokVaani. Every voice carries a piece of history. Listen, learn and help keep India's languages and folk knowledge alive.",
-    "Playing the LokVaani demo voice…"
+    "Welcome to LokVaani. Every voice carries a piece of history. Our goal is to connect knowledge holders with young learners and preserve India's oral traditions."
   );
-
 }
 
 
@@ -705,459 +759,458 @@ function playDemoVoice() {
    ORAL HISTORY
    ========================================================= */
 
-function openOralHistory(title = "Oral History") {
+function openOralHistory() {
 
   showInfoModal(
-
-    title,
-
-    "HEAR A KNOWLEDGE HOLDER",
-
-    `
-    Oral histories allow elders and knowledge holders
-    to share memories, local traditions and experiences
-    with younger generations.
-
-    This prototype demonstrates how a real recording
-    could be presented together with a transcript,
-    regional language, translation and cultural context.
-    `
-
+    "A Grandmother's Memory",
+    "HEAR ORAL HISTORY",
+    "Imagine hearing a grandmother describe a childhood tradition in her own language. LokVaani can preserve that recording together with a transcript, translation and cultural context."
   );
-
 }
 
 
 /* =========================================================
-   FOLK STORY
-   ========================================================= */
-
-function openStory(title) {
-
-  showStoryModal(title);
-
-}
-
-
-/* =========================================================
-   STORY MODAL
-   ========================================================= */
-
-function showStoryModal(title) {
-
-  let modal =
-    document.getElementById(
-      "storyModal"
-    );
-
-
-  if (!modal) {
-
-    modal =
-      document.createElement(
-        "div"
-      );
-
-
-    modal.id =
-      "storyModal";
-
-
-    modal.className =
-      "modal";
-
-
-    modal.innerHTML = `
-
-      <div
-        class="modal-backdrop"
-        onclick="closeStoryModal()">
-      </div>
-
-
-      <div class="modal-card">
-
-        <button
-          class="modal-close"
-          onclick="closeStoryModal()">
-
-          ×
-
-        </button>
-
-
-        <div class="section-label">
-          FOLK STORY LESSON
-        </div>
-
-
-        <h2 id="storyTitle">
-        </h2>
-
-
-        <p
-          style="
-            color:var(--muted);
-            font-size:15px;
-            line-height:1.8;
-          "
-        >
-
-          Once upon a time, a farmer faced
-          a difficult problem in his village.
-          Instead of giving up, he used his
-          knowledge and clever thinking to
-          find a solution.
-
-        </p>
-
-
-        <div
-          style="
-            background:#f8f0e3;
-            padding:18px;
-            border-radius:15px;
-            margin:20px 0;
-          "
-        >
-
-          <strong>
-            Cultural context
-          </strong>
-
-          <p style="margin-bottom:0">
-
-            Folk stories are traditionally
-            passed from one generation to
-            another through spoken storytelling.
-            LokVaani can preserve the original
-            language together with translations,
-            pronunciation and cultural context.
-
-          </p>
-
-        </div>
-
-
-        <button
-          class="btn primary"
-          onclick="startQuiz(); closeStoryModal();"
-        >
-
-          Take a story quiz →
-
-        </button>
-
-      </div>
-
-    `;
-
-
-    document.body.appendChild(
-      modal
-    );
-
-  }
-
-
-  const storyTitle =
-    document.getElementById(
-      "storyTitle"
-    );
-
-
-  if (storyTitle) {
-    storyTitle.textContent =
-      title;
-  }
-
-
-  modal.classList.add(
-    "open"
-  );
-
-
-  modal.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-}
-
-
-/* =========================================================
-   CLOSE STORY
-   ========================================================= */
-
-function closeStoryModal() {
-
-  const modal =
-    document.getElementById(
-      "storyModal"
-    );
-
-
-  if (!modal) return;
-
-
-  modal.classList.remove(
-    "open"
-  );
-
-
-  modal.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-}
-
-
-/* =========================================================
-   TRADITIONAL SONG
-   ========================================================= */
-
-function openSong(title) {
-
-  showInfoModal(
-
-    title,
-
-    "TRADITIONAL SONG EXPERIENCE",
-
-    `
-    This interactive song experience can
-    preserve a consented recording from a
-    knowledge holder.
-
-    Learners can listen to the recording,
-    read a transcription, explore the meaning
-    of the words and learn about the cultural
-    context behind the song.
-
-    The prototype currently demonstrates
-    the learning interface without using
-    copyrighted recordings.
-    `
-
-  );
-
-}
-
-
-/* =========================================================
-   PROVERB
-   ========================================================= */
-
-function openProverb(title) {
-
-  showInfoModal(
-
-    title,
-
-    "PROVERB & IDIOM",
-
-    `
-    Proverbs and idioms carry everyday wisdom
-    and cultural knowledge.
-
-    Learners can discover the original phrase,
-    its meaning, pronunciation, regional usage
-    and an example showing when it can be used.
-
-    This prototype demonstrates that learning
-    experience with community-oriented content.
-    `
-
-  );
-
-}
-
-
-/* =========================================================
-   HERITAGE INFORMATION
-   ========================================================= */
-
-function openHeritageInfo(title) {
-
-  showInfoModal(
-
-    title,
-
-    "LANGUAGE & FOLK KNOWLEDGE",
-
-    `
-    LokVaani connects knowledge holders with
-    young learners.
-
-    A complete entry can include the original
-    regional-language content, translation,
-    pronunciation recording, cultural context,
-    contributor information and validation status.
-    `
-
-  );
-
-}
-
-
-/* =========================================================
-   INFORMATION MODAL
-   ========================================================= */
-
-function showInfoModal(
-  title,
-  subtitle,
-  message
-) {
-
-  let modal =
-    document.getElementById(
-      "infoModal"
-    );
-
-
-  if (!modal) {
-
-    modal =
-      document.createElement(
-        "div"
-      );
-
-
-    modal.id =
-      "infoModal";
-
-
-    modal.className =
-      "modal";
-
-
-    modal.innerHTML = `
-
-      <div
-        class="modal-backdrop"
-        onclick="closeInfoModal()">
-      </div>
-
-
-      <div class="modal-card">
-
-        <button
-          class="modal-close"
-          onclick="closeInfoModal()">
-
-          ×
-
-        </button>
-
-
-        <div
-          class="section-label"
-          id="infoSubtitle">
-        </div>
-
-
-        <h2
-          id="infoTitle">
-        </h2>
-
-
-        <p
-          id="infoMessage"
-          style="
-            color:var(--muted);
-            font-size:15px;
-            line-height:1.8;
-            white-space:pre-line;
-          ">
-        </p>
-
-
-        <button
-          class="btn primary"
-          onclick="closeInfoModal()">
-
-          Continue exploring →
-
-        </button>
-
-      </div>
-
-    `;
-
-
-    document.body.appendChild(
-      modal
-    );
-
-  }
-
-
-  document.getElementById(
-    "infoTitle"
-  ).textContent =
-    title;
-
-
-  document.getElementById(
-    "infoSubtitle"
-  ).textContent =
-    subtitle;
-
-
-  document.getElementById(
-    "infoMessage"
-  ).textContent =
-    message;
-
-
-  modal.classList.add(
-    "open"
-  );
-
-
-  modal.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-}
-
-
-/* =========================================================
-   CLOSE INFORMATION MODAL
-   ========================================================= */
-
-function closeInfoModal() {
-
-  const modal =
-    document.getElementById(
-      "infoModal"
-    );
-
-
-  if (!modal) return;
-
-
-  modal.classList.remove(
-    "open"
-  );
-
-
-  modal.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-}
-
-
-/* =========================================================
-   CONTRIBUTION MODAL
+   CONTRIBUTION
    ========================================================= */
 
 function openContribution() {
 
   const modal =
-    document.getEle
+    document.getElementById(
+      "contributionModal"
+    );
+
+
+  if (!modal) {
+
+    showToast(
+      "Contribution form is unavailable. Please refresh the page."
+    );
+
+    return;
+  }
+
+
+  modal.classList.add("open");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+}
+
+
+function closeContribution() {
+
+  const modal =
+    document.getElementById(
+      "contributionModal"
+    );
+
+
+  if (!modal) return;
+
+
+  modal.classList.remove("open");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+}
+
+
+/* =========================================================
+   CONTRIBUTION FORM
+   ========================================================= */
+
+function setupContributionForm() {
+
+  const form =
+    document.getElementById(
+      "contributionForm"
+    );
+
+
+  if (!form) return;
+
+
+  form.addEventListener(
+    "submit",
+    function(event) {
+
+      event.preventDefault();
+
+
+      const previous =
+        Number(
+          localStorage.getItem(
+            "lokvaaniSubmissions"
+          ) || 0
+        );
+
+
+      localStorage.setItem(
+        "lokvaaniSubmissions",
+        previous + 1
+      );
+
+
+      const total =
+        document.getElementById(
+          "impactTotal"
+        );
+
+
+      if (total) {
+
+        total.textContent =
+          110 +
+          previous +
+          1;
+      }
+
+
+      form.reset();
+
+
+      closeContribution();
+
+
+      showToast(
+        "✓ Contribution submitted for review!"
+      );
+    }
+  );
+}
+
+
+/* =========================================================
+   QUIZ
+   ========================================================= */
+
+function startQuiz() {
+
+  currentQuiz = 0;
+  score = 0;
+
+
+  const modal =
+    document.getElementById(
+      "quizModal"
+    );
+
+
+  if (!modal) {
+
+    showToast(
+      "Quiz is unavailable. Please refresh the page."
+    );
+
+    return;
+  }
+
+
+  modal.classList.add("open");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  renderQuiz();
+}
+
+
+function closeQuiz() {
+
+  const modal =
+    document.getElementById(
+      "quizModal"
+    );
+
+
+  if (!modal) return;
+
+
+  modal.classList.remove(
+    "open"
+  );
+
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+}
+
+
+function renderQuiz() {
+
+  const container =
+    document.getElementById(
+      "quizContent"
+    );
+
+
+  if (!container) return;
+
+
+  const question =
+    quiz[currentQuiz];
+
+
+  if (!question) return;
+
+
+  container.innerHTML = `
+
+    <div class="mini-label">
+      QUESTION ${currentQuiz + 1}
+      OF ${quiz.length}
+    </div>
+
+    <h2 style="font-size:32px">
+      ${question.q}
+    </h2>
+
+    <div>
+
+      ${question.options
+        .map(
+          (option, index) => `
+
+            <button
+              class="quiz-option"
+              data-quiz-option="${index}">
+
+              ${option}
+
+            </button>
+
+          `
+        )
+        .join("")}
+
+    </div>
+  `;
+
+
+  container
+    .querySelectorAll(
+      "[data-quiz-option]"
+    )
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          answerQuiz(
+            Number(
+              this.dataset.quizOption
+            )
+          );
+
+        }
+      );
+
+    });
+}
+
+
+function answerQuiz(index) {
+
+  const question =
+    quiz[currentQuiz];
+
+
+  const buttons =
+    document.querySelectorAll(
+      ".quiz-option"
+    );
+
+
+  buttons.forEach(
+    (button, number) => {
+
+      button.disabled = true;
+
+
+      if (
+        number ===
+        question.correct
+      ) {
+
+        button.classList.add(
+          "correct"
+        );
+
+      }
+
+
+      if (
+        number === index &&
+        number !== question.correct
+      ) {
+
+        button.classList.add(
+          "wrong"
+        );
+
+      }
+
+    }
+  );
+
+
+  if (
+    index ===
+    question.correct
+  ) {
+
+    score++;
+
+    xp += 20;
+
+
+    localStorage.setItem(
+      "lokvaaniXP",
+      xp
+    );
+
+
+    updateXPDisplay();
+  }
+
+
+  setTimeout(
+    () => {
+
+      currentQuiz++;
+
+
+      if (
+        currentQuiz <
+        quiz.length
+      ) {
+
+        renderQuiz();
+
+      } else {
+
+        finishQuiz();
+      }
+
+    },
+    800
+  );
+}
+
+
+function finishQuiz() {
+
+  updateProgress();
+
+
+  const container =
+    document.getElementById(
+      "quizContent"
+    );
+
+
+  if (!container) return;
+
+
+  container.innerHTML = `
+
+    <div class="quiz-result">
+
+      <div style="font-size:55px">
+        🏆
+      </div>
+
+      <div class="section-label">
+        QUIZ COMPLETE
+      </div>
+
+      <h2 style="font-size:40px">
+        You scored
+        ${score}/${quiz.length}
+      </h2>
+
+      <p>
+        You earned
+        ${score * 20} XP.
+      </p>
+
+      <button
+        class="btn primary"
+        id="quizContinue">
+
+        Continue exploring →
+
+      </button>
+
+    </div>
+  `;
+
+
+  document
+    .getElementById(
+      "quizContinue"
+    )
+    .addEventListener(
+      "click",
+      closeQuiz
+    );
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+function updateProgress() {
+
+  const percentage =
+    Math.min(
+      100,
+      Math.round(xp / 2)
+    );
+
+
+  const bar =
+    document.getElementById(
+      "progressBar"
+    );
+
+
+  const text =
+    document.getElementById(
+      "progressText"
+    );
+
+
+  if (bar) {
+
+    bar.style.width =
+      percentage + "%";
+  }
+
+
+  if (text) {
+
+    text.textContent =
+      percentage +
+      "% complete";
+  }
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+function setupMobileMenu() {
