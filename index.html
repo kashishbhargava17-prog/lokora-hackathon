@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
     content="LokVaani — an interactive platform connecting knowledge holders and young learners to preserve India's oral languages and folk knowledge."
-  />
+  >
 
   <title>LokVaani — Hear. Learn. Preserve.</title>
 
@@ -19,23 +19,23 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- =========================
+  <!-- =====================================================
        TOP BAR
-  ========================== -->
+  ====================================================== -->
 
   <div class="topbar">
     A student hackathon prototype • Community knowledge should be reviewed and validated before publication.
   </div>
 
 
-  <!-- =========================
+  <!-- =====================================================
        NAVIGATION
-  ========================== -->
+  ====================================================== -->
 
   <header class="navbar">
 
@@ -50,14 +50,17 @@
 
     </a>
 
+
     <button
       class="menu-toggle"
       id="menuToggle"
       type="button"
       aria-label="Open menu"
+      aria-expanded="false"
     >
       ☰
     </button>
+
 
     <nav id="mainNav">
 
@@ -65,7 +68,7 @@
 
       <a href="#voices">Voices</a>
 
-      <a href="#learn">Learn & Play</a>
+      <a href="#learn">Learn &amp; Play</a>
 
       <a href="#contribute">Contribute</a>
 
@@ -86,17 +89,18 @@
 
   <main>
 
-    <!-- =========================
+    <!-- =====================================================
          HERO
-    ========================== -->
+    ====================================================== -->
 
     <section id="home" class="hero">
 
       <div class="hero-copy">
 
         <div class="eyebrow">
-          INTERACTIVE LANGUAGE & FOLK KNOWLEDGE
+          INTERACTIVE LANGUAGE &amp; FOLK KNOWLEDGE
         </div>
+
 
         <h1>
           Hear the voice.<br>
@@ -104,11 +108,13 @@
           Keep the knowledge alive.
         </h1>
 
+
         <p class="hero-text">
           LokVaani connects elders and knowledge holders with young learners
           through regional languages, folk stories, proverbs, songs,
           vocabulary, oral histories and interactive learning.
         </p>
+
 
         <div class="hero-actions">
 
@@ -118,6 +124,7 @@
           >
             Explore Knowledge <span>→</span>
           </a>
+
 
           <button
             class="btn ghost"
@@ -157,7 +164,7 @@
       </div>
 
 
-      <!-- Decorative hero artwork -->
+      <!-- HERO ART -->
 
       <div
         class="hero-art"
@@ -166,11 +173,15 @@
 
         <div class="sun"></div>
 
+
         <div class="arch">
 
           <div class="arch-inner">
 
-            <div class="lamp">✦</div>
+            <div class="lamp">
+              ✦
+            </div>
+
 
             <div class="sound-wave">
               <i></i>
@@ -179,6 +190,7 @@
               <i></i>
               <i></i>
             </div>
+
 
             <span>
               VOICE<br>
@@ -189,24 +201,34 @@
 
         </div>
 
-        <div class="pattern p1">✦</div>
-        <div class="pattern p2">◌</div>
-        <div class="pattern p3">✺</div>
+
+        <div class="pattern p1">
+          ✦
+        </div>
+
+        <div class="pattern p2">
+          ◌
+        </div>
+
+        <div class="pattern p3">
+          ✺
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- =========================
-         IDEA / BRIDGE
-    ========================== -->
+    <!-- =====================================================
+         LOKVAANI BRIDGE
+    ====================================================== -->
 
     <section class="bridge">
 
       <div class="section-label">
         THE LOKVAANI BRIDGE
       </div>
+
 
       <h2>
         From <span>knowledge holders</span><br>
@@ -247,7 +269,7 @@
           </div>
 
           <h3>
-            Validate & Preserve
+            Validate &amp; Preserve
           </h3>
 
           <p>
@@ -287,9 +309,9 @@
     </section>
 
 
-    <!-- =========================
-         EXPLORE
-    ========================== -->
+    <!-- =====================================================
+         EXPLORE LIVING KNOWLEDGE
+    ====================================================== -->
 
     <section
       id="explore"
@@ -329,7 +351,7 @@
           type="search"
           placeholder="Search a word, story, proverb, song or region..."
           aria-label="Search knowledge"
-        />
+        >
 
 
         <select
@@ -350,7 +372,7 @@
           </option>
 
           <option value="proverb">
-            Proverbs & Idioms
+            Proverbs &amp; Idioms
           </option>
 
           <option value="song">
@@ -394,6 +416,8 @@
       </div>
 
 
+      <!-- JavaScript inserts knowledge cards here -->
+
       <div
         id="contentGrid"
         class="content-grid"
@@ -402,9 +426,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          VOICES OF KNOWLEDGE HOLDERS
-    ========================== -->
+    ====================================================== -->
 
     <section
       id="voices"
@@ -419,6 +443,7 @@
             “
           </div>
 
+
           <div class="portrait">
             👴
           </div>
@@ -432,9 +457,11 @@
             VOICES OF KNOWLEDGE HOLDERS
           </div>
 
+
           <h2>
             Every voice carries a piece of knowledge.
           </h2>
+
 
           <p>
             Oral knowledge lives in people. LokVaani gives
@@ -442,6 +469,7 @@
             language, memories, stories and traditions with
             the next generation.
           </p>
+
 
           <button
             id="demoVoiceBtn"
@@ -459,8 +487,7 @@
 
       <div class="voice-cards">
 
-
-        <!-- Voice card 1 -->
+        <!-- VOICE CARD 1 -->
 
         <article>
 
@@ -468,13 +495,16 @@
             DEMO KNOWLEDGE HOLDER
           </span>
 
+
           <h3>
             “The words my grandmother taught me”
           </h3>
 
+
           <p>
             Marathi • Maharashtra
           </p>
+
 
           <button
             type="button"
@@ -486,7 +516,7 @@
         </article>
 
 
-        <!-- Voice card 2 -->
+        <!-- VOICE CARD 2 -->
 
         <article>
 
@@ -494,13 +524,16 @@
             ORAL HISTORY
           </span>
 
+
           <h3>
             “A memory from my village”
           </h3>
 
+
           <p>
             Rajasthani • Rajasthan
           </p>
+
 
           <button
             type="button"
@@ -512,7 +545,7 @@
         </article>
 
 
-        <!-- Voice card 3 -->
+        <!-- VOICE CARD 3 -->
 
         <article>
 
@@ -520,13 +553,16 @@
             FOLK KNOWLEDGE
           </span>
 
+
           <h3>
             “A proverb passed through generations”
           </h3>
 
+
           <p>
             Punjabi • Punjab
           </p>
+
 
           <button
             type="button"
@@ -538,7 +574,7 @@
         </article>
 
 
-        <!-- Voice card 4 -->
+        <!-- VOICE CARD 4 -->
 
         <article>
 
@@ -546,13 +582,16 @@
             LANGUAGE
           </span>
 
+
           <h3>
             “Words that belong to our village”
           </h3>
 
+
           <p>
             Bengali • West Bengal
           </p>
+
 
           <button
             type="button"
@@ -568,9 +607,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          LEARN & PLAY
-    ========================== -->
+    ====================================================== -->
 
     <section
       id="learn"
@@ -582,8 +621,9 @@
         <div>
 
           <div class="section-label">
-            LEARN & PLAY
+            LEARN &amp; PLAY
           </div>
+
 
           <h2>
             Turn knowledge into a journey
@@ -593,9 +633,15 @@
 
 
         <div class="xp-pill">
+
           ⚡
-          <span id="xpValue">0</span>
+
+          <span id="xpValue">
+            0
+          </span>
+
           XP
+
         </div>
 
       </div>
@@ -603,8 +649,7 @@
 
       <div class="learning-layout">
 
-
-        <!-- Featured story lesson -->
+        <!-- FEATURED STORY -->
 
         <article class="lesson-card featured">
 
@@ -612,20 +657,24 @@
             📖
           </div>
 
+
           <div class="lesson-body">
 
             <span class="mini-label">
               STORY-BASED LEARNING
             </span>
 
+
             <h3>
               The Clever Farmer
             </h3>
+
 
             <p>
               Explore a folk-story lesson with cultural
               context, questions and an interactive quiz.
             </p>
+
 
             <button
               class="btn primary small"
@@ -640,7 +689,7 @@
         </article>
 
 
-        <!-- Vocabulary -->
+        <!-- VOCABULARY -->
 
         <article class="lesson-card">
 
@@ -648,18 +697,22 @@
             🗣️
           </div>
 
+
           <span class="mini-label">
             LOCAL VOCABULARY
           </span>
+
 
           <h3>
             Words from Maharashtra
           </h3>
 
+
           <p>
             Learn regional words with meanings,
             pronunciation and usage.
           </p>
+
 
           <button
             class="text-btn"
@@ -672,7 +725,7 @@
         </article>
 
 
-        <!-- Proverbs -->
+        <!-- PROVERBS -->
 
         <article class="lesson-card">
 
@@ -680,18 +733,22 @@
             💬
           </div>
 
+
           <span class="mini-label">
-            PROVERBS & IDIOMS
+            PROVERBS &amp; IDIOMS
           </span>
+
 
           <h3>
             Can you use it?
           </h3>
 
+
           <p>
             Discover the meaning and situation behind
             traditional proverbs.
           </p>
+
 
           <button
             class="text-btn"
@@ -706,7 +763,7 @@
       </div>
 
 
-      <!-- Progress -->
+      <!-- PROGRESS -->
 
       <div class="progress-card">
 
@@ -718,11 +775,13 @@
               My knowledge journey
             </span>
 
+
             <strong id="progressText">
               0% complete
             </strong>
 
           </div>
+
 
           <div class="progress-track">
 
@@ -739,9 +798,11 @@
             🌱 Explorer
           </span>
 
+
           <span>
             🔒 Culture Keeper
           </span>
+
 
           <span>
             🔒 Knowledge Champion
@@ -754,9 +815,9 @@
     </section>
 
 
-    <!-- =========================
-         CONTRIBUTE
-    ========================== -->
+    <!-- =====================================================
+         COMMUNITY CONTRIBUTIONS
+    ====================================================== -->
 
     <section
       id="contribute"
@@ -769,9 +830,11 @@
           COMMUNITY CONTRIBUTIONS
         </div>
 
+
         <h2>
           Know something worth preserving?
         </h2>
+
 
         <p>
           Share a local word, proverb, folk story,
@@ -779,6 +842,7 @@
           Contributions can enter a review and validation
           process before publication.
         </p>
+
 
         <button
           class="btn primary"
@@ -798,21 +862,27 @@
           <span>Submit</span>
         </div>
 
+
         <i>→</i>
+
 
         <div>
           <b>02</b>
           <span>Review</span>
         </div>
 
+
         <i>→</i>
+
 
         <div>
           <b>03</b>
           <span>Validate</span>
         </div>
 
+
         <i>→</i>
+
 
         <div>
           <b>04</b>
@@ -824,9 +894,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          IMPACT
-    ========================== -->
+    ====================================================== -->
 
     <section
       id="impact"
@@ -841,6 +911,7 @@
             IMPACT DASHBOARD
           </div>
 
+
           <h2>
             Measure what we preserve
           </h2>
@@ -852,16 +923,17 @@
 
       <div class="impact-grid">
 
-
         <div class="impact-card big">
 
           <span>
             Knowledge preserved
           </span>
 
+
           <strong id="impactTotal">
             110
           </strong>
+
 
           <small>
             demo records
@@ -873,12 +945,14 @@
         <div class="impact-card">
 
           <span>
-            Languages & dialects
+            Languages &amp; dialects
           </span>
+
 
           <strong>
             8
           </strong>
+
 
           <small>
             represented
@@ -893,9 +967,11 @@
             Knowledge holders
           </span>
 
+
           <strong>
             38
           </strong>
+
 
           <small>
             contributors
@@ -910,11 +986,15 @@
             Knowledge map
           </span>
 
+
           <div class="india-map">
+
             INDIA
+
             <small>
               12 regions
             </small>
+
           </div>
 
         </div>
@@ -926,9 +1006,9 @@
   </main>
 
 
-  <!-- =========================
+  <!-- =====================================================
        FOOTER
-  ========================== -->
+  ====================================================== -->
 
   <footer>
 
@@ -938,11 +1018,13 @@
         ल
       </span>
 
+
       <span>
 
         <strong>
           LokVaani
         </strong>
+
 
         <small>
           Hear. Learn. Preserve.
@@ -952,16 +1034,17 @@
 
     </div>
 
+
     <p>
-      Hackathon prototype • Interactive Language & Folk Knowledge
+      Hackathon prototype • Interactive Language &amp; Folk Knowledge
     </p>
 
   </footer>
 
 
-  <!-- =========================
+  <!-- =====================================================
        CONTRIBUTION MODAL
-  ========================== -->
+  ====================================================== -->
 
   <div
     id="contributionModal"
@@ -990,6 +1073,7 @@
       <div class="section-label">
         SHARE YOUR KNOWLEDGE
       </div>
+
 
       <h2>
         Help preserve a piece of living knowledge.
@@ -1094,60 +1178,4 @@
             placeholder="Meaning, story, cultural context, when it is used..."
           ></textarea>
 
-        </label>
-
-
-        <label>
-          Pronunciation / audio URL (optional)
-
-          <input
-            name="audio"
-            placeholder="Optional link for your prototype"
-          >
-
-        </label>
-
-
-        <div class="consent">
-
-          <input
-            id="consent"
-            type="checkbox"
-            required
-          >
-
-          <label for="consent">
-            I understand this is a demo submission and
-            real deployments should collect appropriate
-            consent and validation.
-          </label>
-
-        </div>
-
-
-        <button
-          class="btn primary full"
-          type="submit"
-        >
-          Submit for review →
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-       QUIZ MODAL
-  ========================== -->
-
-  <div
-    id="quizModal"
-    class="modal"
-    aria-hidden="true"
-  >
-
-    <div
-      class="moda
+     
